@@ -2,9 +2,1524 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Coding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path to Law School | A Guide for High School Students</title>
+    <style>
+        :root {
+            --navy: #1a2744;
+            --dark-navy: #111b30;
+            --gold: #c9a227;
+            --light-gold: #e8d48b;
+            --cream: #faf8f0;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --dark-text: #1f2937;
+            --accent-red: #8b2332;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--dark-text);
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--dark-navy);
+            z-index: 1000;
+            padding: 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--gold);
+            padding: 1rem 0;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-logo span {
+            color: var(--white);
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 1.2rem 1rem;
+            display: block;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+            background: rgba(201, 162, 39, 0.05);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--gold);
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy) 50%, #2a3f6b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a227' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+            display: block;
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #9ca3af;
+            margin-bottom: 2.5rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero p.hero-desc {
+            font-size: 1.15rem;
+            color: #d1d5db;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-navy);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 2px solid var(--gold);
+        }
+
+        .hero-cta:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 1rem auto;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .alt-bg {
+            background: var(--cream);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold), var(--navy));
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 40px);
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 40px);
+        }
+
+        .timeline-item::before {
+            content: attr(data-year);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--navy);
+            color: var(--gold);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            border: 3px solid var(--gold);
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--gold);
+            max-width: 450px;
+        }
+
+        .timeline-content h3 {
+            color: var(--navy);
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e5e7eb;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .card-header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            position: relative;
+        }
+
+        .card-header h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-header .card-tag {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .card-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card-body li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f3f4f6;
+            color: var(--dark-text);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .card-body li:last-child {
+            border-bottom: none;
+        }
+
+        .card-body li::before {
+            content: '\2713';
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .card-body p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Course Tables */
+        .course-category {
+            margin-bottom: 3rem;
+        }
+
+        .course-category h3 {
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .course-category > p {
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .course-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .course-table thead {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .course-table th {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .course-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.95rem;
+        }
+
+        .course-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .course-table tr:hover td {
+            background: #fefdf5;
+        }
+
+        .priority-high {
+            color: var(--accent-red);
+            font-weight: 700;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .priority-medium {
+            color: var(--gold);
+            font-weight: 700;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .priority-helpful {
+            color: #2d8659;
+            font-weight: 700;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Volunteering Section */
+        .volunteer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .volunteer-card {
+            background: var(--white);
+            border-radius: 4px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--gold);
+            transition: transform 0.3s;
+        }
+
+        .volunteer-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .volunteer-card .v-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .volunteer-card h3 {
+            color: var(--navy);
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .volunteer-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .volunteer-card .impact {
+            background: var(--cream);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--navy);
+            font-style: italic;
+            border-left: 3px solid var(--gold);
+        }
+
+        /* Skills Section */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-box {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--white);
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-3px);
+        }
+
+        .skill-box .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .skill-box h3 {
+            color: var(--navy);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-box p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Tips Section */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-card {
+            display: flex;
+            gap: 1.5rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            align-items: flex-start;
+        }
+
+        .tip-number {
+            background: var(--navy);
+            color: var(--gold);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .tip-content h3 {
+            color: var(--navy);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* LSAT Section */
+        .lsat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .lsat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+
+        .lsat-card h3 {
+            color: var(--navy);
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .lsat-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .lsat-card .score-range {
+            background: var(--navy);
+            color: var(--gold);
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border-radius: 3px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-navy);
+            color: #9ca3af;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer h3 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        footer .disclaimer {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #2a3a5c;
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark-navy);
+                flex-direction: column;
+                padding: 1rem 0;
+                border-top: 1px solid #2a3a5c;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.75rem 2rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 70px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .timeline-item::before {
+                left: 20px;
+                transform: translateX(-50%);
+                width: 40px;
+                height: 40px;
+                font-size: 0.6rem;
+            }
+
+            .timeline-content {
+                max-width: 100%;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-table {
+                font-size: 0.85rem;
+            }
+
+            .course-table th,
+            .course-table td {
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .cards-grid,
+            .volunteer-grid,
+            .lsat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-<h1 align="center">Coding 101</h1>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">PATH TO <span>LAW</span></a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#high-school">High School</a></li>
+                <li><a href="#college">College</a></li>
+                <li><a href="#volunteering">Volunteering</a></li>
+                <li><a href="#lsat">LSAT</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#tips">Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-icon">&#9878;</span>
+            <div class="hero-subtitle">A Student's Guide</div>
+            <h1>Your Path to <span>Law School</span></h1>
+            <p class="hero-desc">
+                A comprehensive guide for high school students who dream of becoming lawyers.
+                From the courses you should take today to the volunteer work that sets you apart.
+            </p>
+            <a href="#roadmap" class="hero-cta">Start Your Journey</a>
+        </div>
+    </section>
+
+    <!-- Roadmap Timeline -->
+    <section id="roadmap">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>The Roadmap to Law School</h2>
+                <div class="accent-line"></div>
+                <p>Becoming a lawyer is a long but rewarding journey. Here's an overview of the key milestones from high school through passing the bar exam.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in" data-year="9-12">
+                    <div class="timeline-content">
+                        <h3>High School (Grades 9&ndash;12)</h3>
+                        <p>Build a strong academic foundation. Take challenging courses in English, history, government, and debate. Join Mock Trial or speech & debate clubs. Maintain a high GPA.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="YEAR 1-4">
+                    <div class="timeline-content">
+                        <h3>Undergraduate Degree (4 Years)</h3>
+                        <p>Earn a bachelor's degree in any field. There is no required "pre-law" major, but Political Science, English, History, Philosophy, and Economics are popular choices that build relevant skills.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="LSAT">
+                    <div class="timeline-content">
+                        <h3>LSAT Exam</h3>
+                        <p>Take the Law School Admission Test, typically during junior or senior year of college. This standardized test is a major factor in law school admissions. Aim for the highest score possible.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="JD">
+                    <div class="timeline-content">
+                        <h3>Law School (3 Years)</h3>
+                        <p>Attend an ABA-accredited law school to earn your Juris Doctor (J.D.) degree. You'll study constitutional law, contracts, torts, civil procedure, criminal law, and more.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="BAR">
+                    <div class="timeline-content">
+                        <h3>Bar Exam &amp; Licensure</h3>
+                        <p>After law school, pass the bar exam in the state where you plan to practice. Once licensed, you're officially an attorney and can begin your legal career.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- High School Courses -->
+    <section id="high-school" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>High School Courses</h2>
+                <div class="accent-line"></div>
+                <p>The courses you take in high school lay the groundwork for college and law school success. Focus on classes that develop critical thinking, writing, and analytical skills.</p>
+            </div>
+
+            <div class="course-category fade-in">
+                <h3>Core Essential Courses</h3>
+                <p>These subjects are the most directly relevant to a future in law.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AP English Language &amp; Composition</strong></td>
+                            <td>Develops persuasive writing and rhetorical analysis&mdash;core lawyer skills</td>
+                            <td><span class="priority-high">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP English Literature</strong></td>
+                            <td>Builds close-reading and textual interpretation abilities</td>
+                            <td><span class="priority-high">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP U.S. History</strong></td>
+                            <td>Understanding the historical context of U.S. law and government</td>
+                            <td><span class="priority-high">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP U.S. Government &amp; Politics</strong></td>
+                            <td>Direct study of the Constitution, legal system, and political institutions</td>
+                            <td><span class="priority-high">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Speech &amp; Debate</strong></td>
+                            <td>Public speaking, logical argumentation, and thinking on your feet</td>
+                            <td><span class="priority-high">Essential</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="course-category fade-in">
+                <h3>Strongly Recommended Courses</h3>
+                <p>These courses further strengthen analytical and reasoning skills valued in law.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AP World History</strong></td>
+                            <td>Broadens understanding of legal systems and governance across cultures</td>
+                            <td><span class="priority-medium">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP European History</strong></td>
+                            <td>Roots of Western legal thought from Roman law to modern democracies</td>
+                            <td><span class="priority-medium">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Psychology</strong></td>
+                            <td>Understanding human behavior helps with jury selection, witness examination</td>
+                            <td><span class="priority-medium">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Statistics</strong></td>
+                            <td>Data interpretation is increasingly important in modern legal practice</td>
+                            <td><span class="priority-medium">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Economics</strong></td>
+                            <td>Understanding economic principles relevant to business law, contracts, and regulation</td>
+                            <td><span class="priority-medium">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Comparative Government</strong></td>
+                            <td>Explore different political and legal systems around the world</td>
+                            <td><span class="priority-medium">Recommended</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="course-category fade-in">
+                <h3>Beneficial Electives</h3>
+                <p>Electives that round out your skills and show intellectual curiosity.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Philosophy / Ethics</strong></td>
+                            <td>Logical reasoning and ethical frameworks directly applicable to law</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Foreign Language (Spanish, etc.)</strong></td>
+                            <td>Bilingual lawyers are in high demand; broadens your client base</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Computer Science / Technology</strong></td>
+                            <td>Tech law, cybersecurity law, and intellectual property are growing fields</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Creative Writing / Journalism</strong></td>
+                            <td>Sharpens clarity of expression and the ability to tell a compelling story</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- High School Extracurriculars -->
+            <div class="section-header" style="margin-top: 3rem;">
+                <h2>High School Activities</h2>
+                <div class="accent-line"></div>
+                <p>Beyond coursework, these activities demonstrate your passion for law and build real skills.</p>
+            </div>
+
+            <div class="cards-grid fade-in">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">Competition</div>
+                        <h3>Mock Trial</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Simulate courtroom proceedings by playing the roles of attorneys and witnesses. This is the single best high school activity for aspiring lawyers.</p>
+                        <ul>
+                            <li>Learn courtroom procedures and legal terminology</li>
+                            <li>Practice constructing and presenting legal arguments</li>
+                            <li>Develop quick thinking under cross-examination</li>
+                            <li>Network with attorney coaches and judges</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">Competition</div>
+                        <h3>Speech &amp; Debate</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Formal debate teaches the skills of persuasion, evidence analysis, and structured argumentation that are central to legal practice.</p>
+                        <ul>
+                            <li>Lincoln-Douglas debate focuses on values and ethics</li>
+                            <li>Policy debate builds research and fast thinking skills</li>
+                            <li>Public Forum debate develops accessible communication</li>
+                            <li>Congressional debate simulates legislative process</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">Leadership</div>
+                        <h3>Student Government</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Participating in student government develops leadership, negotiation, and an understanding of governance and policy-making.</p>
+                        <ul>
+                            <li>Draft and propose school policies</li>
+                            <li>Practice consensus-building and compromise</li>
+                            <li>Develop public speaking and leadership skills</li>
+                            <li>Manage budgets and organize events</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- College Courses -->
+    <section id="college">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>College Courses &amp; Majors</h2>
+                <div class="accent-line"></div>
+                <p>Law schools accept students from any major. Choose subjects you are passionate about while building the skills that matter most: writing, analysis, and critical thinking.</p>
+            </div>
+
+            <div class="course-category fade-in">
+                <h3>Top Undergraduate Majors for Law</h3>
+                <p>While there is no required pre-law major, these disciplines have strong track records for law school preparation.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Major</th>
+                            <th>Strengths for Law</th>
+                            <th>Common Career Paths</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Political Science</strong></td>
+                            <td>Government structures, constitutional law, policy analysis</td>
+                            <td>Government law, public interest, policy</td>
+                        </tr>
+                        <tr>
+                            <td><strong>English</strong></td>
+                            <td>Advanced writing, textual analysis, argumentation</td>
+                            <td>Litigation, appellate law, legal writing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>History</strong></td>
+                            <td>Research skills, understanding precedent, source analysis</td>
+                            <td>Constitutional law, civil rights law</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Philosophy</strong></td>
+                            <td>Logic, ethical reasoning, deductive argumentation</td>
+                            <td>Legal theory, judicial clerkships</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Economics</strong></td>
+                            <td>Quantitative analysis, market regulation, policy impact</td>
+                            <td>Corporate law, antitrust, tax law</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Criminal Justice</strong></td>
+                            <td>Direct study of the legal system, corrections, policing</td>
+                            <td>Criminal defense, prosecution, policy</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="course-category fade-in">
+                <h3>Standout Unconventional Majors</h3>
+                <p>These majors can give you a unique edge and open doors to specialized legal fields.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Major</th>
+                            <th>Strengths for Law</th>
+                            <th>Legal Specialization</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Engineering</strong></td>
+                            <td>Problem-solving, technical literacy, analytical thinking</td>
+                            <td>Patent law, intellectual property</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Computer Science</strong></td>
+                            <td>Technology fluency, data analysis, systems thinking</td>
+                            <td>Tech law, cybersecurity, privacy law</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Environmental Science</strong></td>
+                            <td>Scientific literacy, policy research, regulatory knowledge</td>
+                            <td>Environmental law, energy law</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Accounting / Finance</strong></td>
+                            <td>Financial analysis, regulatory compliance, precision</td>
+                            <td>Tax law, securities law, white-collar crime</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Psychology</strong></td>
+                            <td>Understanding behavior, research methods, empathy</td>
+                            <td>Family law, forensic psychology, mediation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="course-category fade-in">
+                <h3>Key College Courses to Take (Any Major)</h3>
+                <p>Regardless of your major, these specific courses will prepare you well for law school.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters for Law School</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Constitutional Law</strong></td>
+                            <td>Foundation of the U.S. legal system; often offered in Political Science departments</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Logic or Critical Thinking</strong></td>
+                            <td>Formal reasoning directly applies to LSAT preparation and legal argumentation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legal Writing or Advanced Composition</strong></td>
+                            <td>Law school is writing-intensive; strong writers have a major advantage</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ethics / Moral Philosophy</strong></td>
+                            <td>Legal ethics is a required law school course and bar exam subject</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Public Speaking / Rhetoric</strong></td>
+                            <td>Oral advocacy is essential for courtroom lawyers and moot court competitions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Statistics or Research Methods</strong></td>
+                            <td>Understanding data and evidence evaluation is increasingly important in litigation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Introduction to Business Law</strong></td>
+                            <td>Overview of contracts, torts, and liability before law school dives deeper</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sociology or Anthropology</strong></td>
+                            <td>Understanding social structures and inequality informs public interest and civil rights law</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteering & Experience -->
+    <section id="volunteering" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Volunteering &amp; Experience</h2>
+                <div class="accent-line"></div>
+                <p>Law school admissions committees value demonstrated commitment to justice and community service. Volunteering shows that you understand the real-world impact of the law.</p>
+            </div>
+
+            <div class="volunteer-grid">
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#9878;</span>
+                    <h3>Legal Aid Organizations</h3>
+                    <p>Volunteer with local Legal Aid societies that provide free legal services to low-income individuals. Tasks may include intake interviews, filing paperwork, and assisting attorneys.</p>
+                    <div class="impact"><strong>Where to find:</strong> Search for your local Legal Aid Society, Legal Services Corporation affiliates, or law school clinical programs that accept volunteers.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#127979;</span>
+                    <h3>Court Observation &amp; Clerking</h3>
+                    <p>Many local courthouses allow students to observe proceedings. Some courts and judges' chambers offer internship or volunteer opportunities for students.</p>
+                    <div class="impact"><strong>Where to find:</strong> Contact your county or municipal courthouse. Ask about courtroom observer programs or volunteer positions in the clerk's office.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#128101;</span>
+                    <h3>Civil Rights &amp; Advocacy Groups</h3>
+                    <p>Organizations like the ACLU, NAACP, and local civil liberties groups rely on volunteers to assist with research, community outreach, and event coordination.</p>
+                    <div class="impact"><strong>Where to find:</strong> Visit websites of national organizations for local chapter information. Many have specific student volunteer programs.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#127758;</span>
+                    <h3>Immigrant &amp; Refugee Services</h3>
+                    <p>Help immigrants navigate legal processes by volunteering with refugee resettlement agencies or immigration legal clinics. Translation skills are a plus.</p>
+                    <div class="impact"><strong>Where to find:</strong> Look for local USCIS-affiliated organizations, International Rescue Committee, Catholic Charities immigration services, or university immigration clinics.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#128218;</span>
+                    <h3>Tutoring &amp; Mentoring Youth</h3>
+                    <p>Teach or mentor younger students, particularly in under-served communities. This demonstrates commitment to education and equity&mdash;values admissions committees respect.</p>
+                    <div class="impact"><strong>Where to find:</strong> Big Brothers Big Sisters, Boys & Girls Clubs, school district volunteer programs, or local literacy organizations.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#128736;</span>
+                    <h3>Habitat for Humanity &amp; Housing Orgs</h3>
+                    <p>Housing law is a major area of legal practice. Volunteering in affordable housing shows awareness of systemic issues and community dedication.</p>
+                    <div class="impact"><strong>Where to find:</strong> Habitat for Humanity local chapters, local housing authorities, or tenant advocacy organizations in your area.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#128196;</span>
+                    <h3>Political Campaigns &amp; Civic Engagement</h3>
+                    <p>Volunteer on local political campaigns, voter registration drives, or ballot initiative efforts. This shows engagement with the democratic process and policy.</p>
+                    <div class="impact"><strong>Where to find:</strong> Local political party offices, League of Women Voters, voter registration organizations, or contact your elected officials' offices directly.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#129309;</span>
+                    <h3>Mediation &amp; Conflict Resolution</h3>
+                    <p>Some community mediation centers train volunteers to help resolve disputes. This experience is directly relevant to alternative dispute resolution (ADR) in law.</p>
+                    <div class="impact"><strong>Where to find:</strong> Community mediation centers, local bar association programs, or school-based peer mediation programs.</div>
+                </div>
+            </div>
+
+            <!-- Internships -->
+            <div class="section-header" style="margin-top: 4rem;">
+                <h2>Internship Opportunities</h2>
+                <div class="accent-line"></div>
+                <p>Paid and unpaid internships provide hands-on experience and show law schools you've explored the profession seriously.</p>
+            </div>
+
+            <div class="cards-grid fade-in">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">High School + College</div>
+                        <h3>Law Firm Internships</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Shadow attorneys during client meetings and research</li>
+                            <li>Assist with document review and case file organization</li>
+                            <li>Learn how a law practice operates day-to-day</li>
+                            <li>Contact local bar associations for student programs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">College</div>
+                        <h3>Government Internships</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Work in a legislator's office to learn about lawmaking</li>
+                            <li>Intern at the District Attorney's or Public Defender's office</li>
+                            <li>State and federal agencies hire interns for policy work</li>
+                            <li>Apply through your school's career office or USA.gov</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">College</div>
+                        <h3>Nonprofit &amp; NGO Internships</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Work with public interest law organizations</li>
+                            <li>Assist with research on civil rights or environmental issues</li>
+                            <li>Build a network in the public interest legal community</li>
+                            <li>Demonstrates commitment beyond financial incentives</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LSAT Preparation -->
+    <section id="lsat">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>LSAT Preparation</h2>
+                <div class="accent-line"></div>
+                <p>The LSAT is one of the most important factors in law school admissions. It tests logical reasoning, analytical reasoning, and reading comprehension&mdash;skills you can build over time.</p>
+            </div>
+
+            <div class="lsat-grid fade-in">
+                <div class="lsat-card">
+                    <h3>Logical Reasoning</h3>
+                    <p>Analyze arguments, identify flaws, draw conclusions, and strengthen or weaken claims. This is the largest section of the test.</p>
+                    <div class="score-range">~50% of scored questions</div>
+                </div>
+
+                <div class="lsat-card">
+                    <h3>Analytical Reasoning</h3>
+                    <p>Often called "logic games"&mdash;involves deducing relationships from sets of rules. Practice with formal logic and puzzles.</p>
+                    <div class="score-range">~25% of scored questions</div>
+                </div>
+
+                <div class="lsat-card">
+                    <h3>Reading Comprehension</h3>
+                    <p>Read dense passages from law, humanities, sciences, and social sciences, then answer questions about structure, arguments, and implications.</p>
+                    <div class="score-range">~25% of scored questions</div>
+                </div>
+            </div>
+
+            <div class="tips-grid fade-in" style="margin-top: 2.5rem;">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <div class="tip-content">
+                        <h3>Start Early</h3>
+                        <p>Begin LSAT preparation at least 3&ndash;6 months before your test date. Many top scorers study for even longer. Use official LSAT PrepTests from LSAC for the most realistic practice.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <div class="tip-content">
+                        <h3>Take a Course or Self-Study</h3>
+                        <p>Consider LSAT prep courses from providers like Khan Academy (free), 7Sage, Blueprint, or Kaplan. Self-disciplined students can succeed with books and practice tests alone.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <div class="tip-content">
+                        <h3>Score Targets</h3>
+                        <p>The LSAT is scored 120&ndash;180. Top-14 law schools generally look for 170+. Scores of 160+ open doors to many strong programs. Know your target schools' medians.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div class="tip-content">
+                        <h3>Practice Under Real Conditions</h3>
+                        <p>Take full-length, timed practice tests to build stamina. Review every wrong answer thoroughly. Track your progress and focus on weak areas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills to Develop -->
+    <section id="skills" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Skills to Develop Now</h2>
+                <div class="accent-line"></div>
+                <p>Beyond academics, successful law students share a common set of skills. Start building these abilities in high school and college.</p>
+            </div>
+
+            <div class="skills-wrapper fade-in">
+                <div class="skill-box">
+                    <span class="skill-icon">&#9997;</span>
+                    <h3>Writing</h3>
+                    <p>Clear, persuasive, and precise writing is the foundation of legal practice. Write often&mdash;essays, editorials, research papers, and journals.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128172;</span>
+                    <h3>Public Speaking</h3>
+                    <p>Whether in a courtroom, boardroom, or negotiation, lawyers must communicate confidently and clearly to diverse audiences.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#129504;</span>
+                    <h3>Critical Thinking</h3>
+                    <p>Lawyers must analyze problems from all angles, evaluate evidence, and construct sound logical arguments every day.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128270;</span>
+                    <h3>Research</h3>
+                    <p>Legal research is a core attorney skill. Practice finding, evaluating, and synthesizing information from multiple sources.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128101;</span>
+                    <h3>Empathy &amp; Listening</h3>
+                    <p>Great lawyers listen to their clients and understand diverse perspectives. Empathy builds trust and leads to better advocacy.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#9201;</span>
+                    <h3>Time Management</h3>
+                    <p>Law school and legal practice require juggling deadlines, cases, and clients. Build strong organizational habits early.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Tips -->
+    <section id="tips">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Law School Application Tips</h2>
+                <div class="accent-line"></div>
+                <p>When it's time to apply to law school, your preparation will pay off. Here are key strategies for building a strong application.</p>
+            </div>
+
+            <div class="tips-grid fade-in">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <div class="tip-content">
+                        <h3>Maintain a High GPA</h3>
+                        <p>Your undergraduate GPA is one of the two most important numbers in your application (alongside LSAT). Aim for the highest GPA you can achieve. Law schools look at your LSAC-calculated GPA, which includes all undergraduate coursework.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <div class="tip-content">
+                        <h3>Write a Compelling Personal Statement</h3>
+                        <p>Your personal statement should tell a genuine story about why you want to practice law. Focus on specific experiences that shaped your desire, not generic statements about "wanting justice." Show, don't tell.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <div class="tip-content">
+                        <h3>Get Strong Letters of Recommendation</h3>
+                        <p>Build relationships with professors who know you well. The best recommendations come from faculty who can speak to your writing, analytical thinking, and character&mdash;not just confirm you got an A.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div class="tip-content">
+                        <h3>Demonstrate Sustained Commitment</h3>
+                        <p>Admissions committees prefer deep involvement in a few activities over shallow participation in many. Show years of commitment and increasing responsibility in your extracurriculars and volunteer work.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">5</div>
+                    <div class="tip-content">
+                        <h3>Research Schools Carefully</h3>
+                        <p>Look beyond rankings. Consider each school's clinical programs, faculty specialties, bar passage rates, employment outcomes, location, and culture. Apply to a range of reach, target, and safety schools.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">6</div>
+                    <div class="tip-content">
+                        <h3>Apply Early</h3>
+                        <p>Most law schools use rolling admissions. Submitting your application early in the cycle (September&ndash;November) can improve your chances, as more seats are available earlier in the process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Begin Your Journey Today</h3>
+            <p>Every successful lawyer started exactly where you are now. The choices you make in high school and college&mdash;the courses you take, the activities you pursue, the communities you serve&mdash;all build toward your future in law.</p>
+            <p>Stay curious, write often, argue passionately, and never stop asking "why?"</p>
+            <div class="disclaimer">
+                This guide is for informational purposes only. Always consult with your school counselor, pre-law advisor, and the specific law schools you're interested in for the most current requirements and recommendations.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Scroll fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll offset for fixed nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 70;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
