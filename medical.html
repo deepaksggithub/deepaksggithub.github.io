@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path to Medical School | A Guide for High School Students</title>
+    <style>
+        :root {
+            --teal: #0d6e6e;
+            --dark-teal: #094b4b;
+            --deep-bg: #0a1628;
+            --dark-bg: #0f1f3a;
+            --accent-blue: #3b82f6;
+            --light-blue: #93c5fd;
+            --mint: #a7f3d0;
+            --cream: #f0fdf4;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --dark-text: #1f2937;
+            --accent-red: #dc2626;
+            --accent-green: #059669;
+            --warm-gold: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--dark-text);
+            line-height: 1.7;
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--deep-bg);
+            z-index: 1000;
+            padding: 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--mint);
+            padding: 1rem 0;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-logo span {
+            color: var(--white);
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 1.2rem 0.85rem;
+            display: block;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--mint);
+            border-bottom-color: var(--mint);
+            background: rgba(167, 243, 208, 0.05);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--mint);
+            transition: 0.3s;
+        }
+
+        /* ===================== HERO ===================== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--deep-bg) 0%, var(--dark-bg) 50%, #142952 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.03'%3E%3Cpath d='M20 0l20 20-20 20L0 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero h1 em {
+            color: var(--mint);
+            display: block;
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #9ca3af;
+            margin-bottom: 2.5rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero p.hero-desc {
+            font-size: 1.15rem;
+            color: #d1d5db;
+            margin-bottom: 2.5rem;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--accent-green);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-green);
+            border-radius: 3px;
+        }
+
+        .hero-cta:hover {
+            background: transparent;
+            color: var(--mint);
+            border-color: var(--mint);
+        }
+
+        /* ===================== SECTIONS ===================== */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            color: var(--dark-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .accent-line {
+            width: 60px;
+            height: 3px;
+            background: var(--accent-green);
+            margin: 1rem auto;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .alt-bg {
+            background: var(--cream);
+        }
+
+        /* ===================== TIMELINE ===================== */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-green), var(--dark-teal));
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 40px);
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 40px);
+        }
+
+        .timeline-item::before {
+            content: attr(data-year);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark-teal);
+            color: var(--mint);
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            border: 3px solid var(--accent-green);
+            text-align: center;
+            line-height: 1.2;
+            padding: 4px;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--accent-green);
+            max-width: 450px;
+        }
+
+        .timeline-content h3 {
+            color: var(--dark-teal);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* ===================== COURSE TABLES ===================== */
+        .course-category {
+            margin-bottom: 3rem;
+        }
+
+        .course-category h3 {
+            font-size: 1.4rem;
+            color: var(--dark-teal);
+            margin-bottom: 0.25rem;
+        }
+
+        .course-category > p {
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .course-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .course-table thead {
+            background: var(--dark-teal);
+            color: var(--white);
+        }
+
+        .course-table th {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .course-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.95rem;
+        }
+
+        .course-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .course-table tr:hover td {
+            background: #f0fdf8;
+        }
+
+        .priority-essential {
+            color: var(--accent-red);
+            font-weight: 700;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .priority-recommended {
+            color: var(--warm-gold);
+            font-weight: 700;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .priority-helpful {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===================== CARDS ===================== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e5e7eb;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .card-header {
+            background: var(--dark-teal);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+        }
+
+        .card-header h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-header .card-tag {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--mint);
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .card-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card-body li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f3f4f6;
+            color: var(--dark-text);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .card-body li:last-child {
+            border-bottom: none;
+        }
+
+        .card-body li::before {
+            content: '\2713';
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .card-body p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* ===================== VOLUNTEERING ===================== */
+        .volunteer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .volunteer-card {
+            background: var(--white);
+            border-radius: 6px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--accent-green);
+            transition: transform 0.3s;
+        }
+
+        .volunteer-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .volunteer-card .v-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .volunteer-card h3 {
+            color: var(--dark-teal);
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .volunteer-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .volunteer-card .impact {
+            background: var(--cream);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--dark-teal);
+            font-style: italic;
+            border-left: 3px solid var(--accent-green);
+        }
+
+        /* ===================== SKILLS ===================== */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-box {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--white);
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-3px);
+        }
+
+        .skill-box .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .skill-box h3 {
+            color: var(--dark-teal);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-box p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===================== TIP CARDS ===================== */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-card {
+            display: flex;
+            gap: 1.5rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            align-items: flex-start;
+        }
+
+        .tip-number {
+            background: var(--dark-teal);
+            color: var(--mint);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .tip-content h3 {
+            color: var(--dark-teal);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===================== MCAT SECTION ===================== */
+        .mcat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .mcat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+
+        .mcat-card h3 {
+            color: var(--dark-teal);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .mcat-card p {
+            color: var(--gray);
+            font-size: 0.88rem;
+            margin-bottom: 1rem;
+        }
+
+        .mcat-card .score-range {
+            background: var(--dark-teal);
+            color: var(--mint);
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border-radius: 3px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* ===================== SPECIALTIES SHOWCASE ===================== */
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .specialty-tag {
+            background: var(--white);
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 1.25rem 1rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .specialty-tag:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(5, 150, 105, 0.1);
+        }
+
+        .specialty-tag .sp-icon {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .specialty-tag h4 {
+            color: var(--dark-teal);
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .specialty-tag p {
+            color: var(--gray);
+            font-size: 0.78rem;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--deep-bg);
+            color: #9ca3af;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer h3 {
+            color: var(--mint);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        footer .disclaimer {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #1e3a5f;
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--deep-bg);
+                flex-direction: column;
+                padding: 1rem 0;
+                border-top: 1px solid #1e3a5f;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.75rem 2rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 75px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .timeline-item::before {
+                left: 20px;
+                transform: translateX(-50%);
+                width: 40px;
+                height: 40px;
+                font-size: 0.5rem;
+            }
+
+            .timeline-content {
+                max-width: 100%;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-table {
+                font-size: 0.85rem;
+            }
+
+            .course-table th,
+            .course-table td {
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .cards-grid,
+            .volunteer-grid,
+            .mcat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .specialties-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ===================== ANIMATION ===================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">PATH TO <span>MEDICINE</span></a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#high-school">High School</a></li>
+                <li><a href="#college">College</a></li>
+                <li><a href="#volunteering">Volunteering</a></li>
+                <li><a href="#mcat">MCAT</a></li>
+                <li><a href="#specialties">Specialties</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#tips">Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-icon">&#9764;</span>
+            <div class="hero-subtitle">A Student's Guide</div>
+            <h1>Your Path to <em>Medical School</em></h1>
+            <p class="hero-desc">
+                A comprehensive guide for high school students who dream of becoming physicians.
+                From the science courses you should take today to the clinical experiences that set you apart.
+            </p>
+            <a href="#roadmap" class="hero-cta">Start Your Journey</a>
+        </div>
+    </section>
+
+    <!-- ==================== ROADMAP TIMELINE ==================== -->
+    <section id="roadmap">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>The Roadmap to Medical School</h2>
+                <div class="accent-line"></div>
+                <p>Becoming a physician is one of the longest educational journeys&mdash;but also one of the most rewarding. Here's every major milestone from high school through residency.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in" data-year="9-12">
+                    <div class="timeline-content">
+                        <h3>High School (Grades 9&ndash;12)</h3>
+                        <p>Build a strong foundation in math and science. Take AP Biology, Chemistry, and Physics. Volunteer in healthcare settings and maintain a high GPA to prepare for a competitive undergraduate program.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="YEAR 1-4">
+                    <div class="timeline-content">
+                        <h3>Undergraduate Degree (4 Years)</h3>
+                        <p>Complete a bachelor's degree with all required pre-med courses: biology, general chemistry, organic chemistry, biochemistry, physics, English, math, and psychology/sociology. Maintain a high GPA and gain clinical experience.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="MCAT">
+                    <div class="timeline-content">
+                        <h3>MCAT Exam</h3>
+                        <p>Take the Medical College Admission Test, typically during the spring or summer before your senior year of college. This comprehensive exam tests your knowledge of science, critical reasoning, and social sciences.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="MD/DO">
+                    <div class="timeline-content">
+                        <h3>Medical School (4 Years)</h3>
+                        <p>Attend an accredited medical school to earn your M.D. or D.O. degree. The first two years focus on classroom learning (anatomy, physiology, pharmacology); years three and four are clinical rotations in hospitals and clinics.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="RESID.">
+                    <div class="timeline-content">
+                        <h3>Residency (3&ndash;7 Years)</h3>
+                        <p>After medical school, complete a residency in your chosen specialty (e.g., family medicine, surgery, pediatrics). This is hands-on training in hospitals and clinics under supervision. Length depends on specialty.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="LICENSE">
+                    <div class="timeline-content">
+                        <h3>Board Certification &amp; Licensure</h3>
+                        <p>Pass the USMLE (for M.D.) or COMLEX (for D.O.) board exams, obtain a state medical license, and optionally pursue board certification in your specialty. You are now a practicing physician.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HIGH SCHOOL COURSES ==================== -->
+    <section id="high-school" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>High School Courses</h2>
+                <div class="accent-line"></div>
+                <p>The courses you take in high school build the science and critical thinking foundation you'll need in college pre-med coursework and beyond. Challenge yourself with AP and Honors classes whenever possible.</p>
+            </div>
+
+            <!-- Essential Sciences -->
+            <div class="course-category fade-in">
+                <h3>Essential Science Courses</h3>
+                <p>These are the most directly important courses for your pre-med future. Aim for AP-level whenever available.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AP Biology</strong></td>
+                            <td>Foundation of all medical sciences&mdash;cell biology, genetics, physiology, and evolution</td>
+                            <td><span class="priority-essential">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Chemistry</strong></td>
+                            <td>Critical for understanding biochemistry, pharmacology, and metabolic processes</td>
+                            <td><span class="priority-essential">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Physics 1 &amp; 2</strong></td>
+                            <td>Required pre-med prerequisite; tests concepts on the MCAT including mechanics, electricity, and optics</td>
+                            <td><span class="priority-essential">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Calculus AB or BC</strong></td>
+                            <td>Strong math skills are essential for physics, chemistry, and biostatistics in college</td>
+                            <td><span class="priority-essential">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anatomy &amp; Physiology</strong></td>
+                            <td>Direct introduction to the human body&mdash;the core subject of medical school</td>
+                            <td><span class="priority-essential">Essential</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Recommended Courses -->
+            <div class="course-category fade-in">
+                <h3>Strongly Recommended Courses</h3>
+                <p>These courses strengthen your application and prepare you for the broader demands of medical education.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AP Statistics</strong></td>
+                            <td>Medical research relies on statistics; tested on the MCAT and used throughout clinical practice</td>
+                            <td><span class="priority-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Psychology</strong></td>
+                            <td>Behavioral sciences are a major section of the MCAT; understanding the mind-body connection is key to patient care</td>
+                            <td><span class="priority-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP English Language &amp; Composition</strong></td>
+                            <td>Doctors must communicate clearly in writing&mdash;research papers, patient records, and applications all require strong writing skills</td>
+                            <td><span class="priority-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Environmental Science</strong></td>
+                            <td>Public health and environmental health are growing areas of medicine</td>
+                            <td><span class="priority-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Computer Science Principles</strong></td>
+                            <td>Health informatics, electronic medical records, and data analysis are transforming medicine</td>
+                            <td><span class="priority-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Honors/AP Biochemistry (if offered)</strong></td>
+                            <td>Bridges biology and chemistry&mdash;one of the hardest and most important pre-med college courses</td>
+                            <td><span class="priority-recommended">Recommended</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Beneficial Electives -->
+            <div class="course-category fade-in">
+                <h3>Beneficial Electives</h3>
+                <p>These electives show well-roundedness and build skills medical schools value.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Spanish or Other Foreign Language</strong></td>
+                            <td>Bilingual doctors serve more patients; Spanish is especially valuable in the U.S. healthcare system</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ethics / Philosophy</strong></td>
+                            <td>Medical ethics is central to clinical practice&mdash;end-of-life decisions, informed consent, and resource allocation</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sociology</strong></td>
+                            <td>Understanding social determinants of health and health disparities, tested on the MCAT</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Health Sciences / Biomedical Technology</strong></td>
+                            <td>Hands-on exposure to medical careers, lab techniques, and healthcare systems</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Public Speaking</strong></td>
+                            <td>Physicians educate patients, present at conferences, and lead care teams daily</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- High School Activities -->
+            <div class="section-header" style="margin-top: 3rem;">
+                <h2>High School Activities</h2>
+                <div class="accent-line"></div>
+                <p>Extracurricular activities demonstrate passion, leadership, and commitment to medicine beyond academics.</p>
+            </div>
+
+            <div class="cards-grid fade-in">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">Competition &amp; Club</div>
+                        <h3>Science Olympiad</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>A national STEM competition with events spanning biology, chemistry, physics, and engineering. One of the best activities for pre-med students.</p>
+                        <ul>
+                            <li>Events like Anatomy &amp; Physiology and Disease Detectives are directly medical</li>
+                            <li>Develops teamwork, time management, and deep scientific knowledge</li>
+                            <li>Competitions at regional, state, and national levels</li>
+                            <li>Shows sustained commitment to science</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">Club &amp; Organization</div>
+                        <h3>HOSA (Health Occupations Students of America)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>A national student organization for future health professionals with competitive events in medical terminology, biomedical research, and clinical specialties.</p>
+                        <ul>
+                            <li>Competitive events in medical knowledge and clinical skills</li>
+                            <li>Networking with healthcare professionals</li>
+                            <li>Leadership opportunities at chapter and state levels</li>
+                            <li>Directly demonstrates commitment to a healthcare career</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">Research &amp; Leadership</div>
+                        <h3>Research &amp; Science Fairs</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Conducting an independent research project&mdash;especially in biology, public health, or biomedical science&mdash;is one of the strongest things you can do as a pre-med student.</p>
+                        <ul>
+                            <li>Enter projects in ISEF, Regeneron STS, or local science fairs</li>
+                            <li>Reach out to local university labs for mentorship opportunities</li>
+                            <li>Learn the scientific method, data analysis, and academic writing</li>
+                            <li>Research experience is highly valued by medical schools</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COLLEGE COURSES & MAJORS ==================== -->
+    <section id="college">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>College Courses &amp; Majors</h2>
+                <div class="accent-line"></div>
+                <p>Medical schools require specific prerequisite courses but accept students from any major. Choose a major you're passionate about while completing the required pre-med coursework.</p>
+            </div>
+
+            <!-- Pre-Med Prerequisites -->
+            <div class="course-category fade-in">
+                <h3>Required Pre-Med Prerequisite Courses</h3>
+                <p>Nearly all medical schools require the following courses. These are non-negotiable&mdash;plan your schedule around them.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Typical Duration</th>
+                            <th>Why It's Required</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>General Biology I &amp; II (with labs)</strong></td>
+                            <td>2 semesters</td>
+                            <td>Core foundation for all biomedical sciences&mdash;cellular biology, genetics, ecology, and evolution</td>
+                        </tr>
+                        <tr>
+                            <td><strong>General Chemistry I &amp; II (with labs)</strong></td>
+                            <td>2 semesters</td>
+                            <td>Atomic structure, bonding, reactions, thermodynamics&mdash;foundation for organic chemistry and biochemistry</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organic Chemistry I &amp; II (with labs)</strong></td>
+                            <td>2 semesters</td>
+                            <td>Structure and reactions of carbon-based molecules; essential for understanding biochemistry and pharmacology</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Biochemistry</strong></td>
+                            <td>1 semester</td>
+                            <td>Metabolism, enzyme function, molecular biology&mdash;heavily tested on the MCAT and central to medical school</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Physics I &amp; II (with labs)</strong></td>
+                            <td>2 semesters</td>
+                            <td>Mechanics, electricity, magnetism, optics, and thermodynamics&mdash;tested on the MCAT and relevant to medical imaging</td>
+                        </tr>
+                        <tr>
+                            <td><strong>English / Writing (2 courses)</strong></td>
+                            <td>2 semesters</td>
+                            <td>Clear written communication for research, patient records, and medical literature</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mathematics (Calculus and/or Statistics)</strong></td>
+                            <td>1&ndash;2 semesters</td>
+                            <td>Quantitative reasoning, biostatistics, and understanding medical research data</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Psychology</strong></td>
+                            <td>1 semester</td>
+                            <td>Behavioral science is a major MCAT section; critical for understanding patient behavior and mental health</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sociology</strong></td>
+                            <td>1 semester</td>
+                            <td>Social determinants of health, health disparities, and population health&mdash;tested on the MCAT</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Popular Majors -->
+            <div class="course-category fade-in">
+                <h3>Popular Undergraduate Majors for Pre-Med</h3>
+                <p>Any major is acceptable for medical school. These are popular because they naturally overlap with pre-med prerequisites.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Major</th>
+                            <th>Strengths for Medicine</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Biology</strong></td>
+                            <td>Maximum overlap with pre-med courses; deep life science foundation</td>
+                            <td>Most common pre-med major, but not required</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Biochemistry</strong></td>
+                            <td>Combines biology and chemistry at the molecular level</td>
+                            <td>Excellent MCAT preparation; close to what you study in medical school</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chemistry</strong></td>
+                            <td>Strong analytical and lab skills; excellent foundation for pharmacology</td>
+                            <td>Great if you're interested in pharmaceutical or research medicine</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Neuroscience</strong></td>
+                            <td>Brain and nervous system focus; bridges biology and psychology</td>
+                            <td>Ideal for aspiring neurologists, psychiatrists, or neurosurgeons</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Public Health</strong></td>
+                            <td>Population health, epidemiology, health policy, and disease prevention</td>
+                            <td>Valuable for understanding healthcare systems and community medicine</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Psychology</strong></td>
+                            <td>Understanding human behavior, mental health, research methods</td>
+                            <td>Strong MCAT prep for Psychological &amp; Social Foundations section</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Standout Majors -->
+            <div class="course-category fade-in">
+                <h3>Standout Non-Traditional Majors</h3>
+                <p>These majors can differentiate your application and open unique career paths in medicine.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Major</th>
+                            <th>Strengths for Medicine</th>
+                            <th>Medical Specialization</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Biomedical Engineering</strong></td>
+                            <td>Technical problem-solving, medical device knowledge, quantitative skills</td>
+                            <td>Orthopedic surgery, radiology, medical technology</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Computer Science</strong></td>
+                            <td>Data science, AI in medicine, health informatics</td>
+                            <td>Radiology (AI imaging), bioinformatics, health IT</td>
+                        </tr>
+                        <tr>
+                            <td><strong>English / Humanities</strong></td>
+                            <td>Exceptional communication, empathy, narrative medicine</td>
+                            <td>Psychiatry, palliative care, patient advocacy</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kinesiology / Exercise Science</strong></td>
+                            <td>Movement science, rehabilitation, sports physiology</td>
+                            <td>Sports medicine, physical medicine &amp; rehabilitation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Spanish / Linguistics</strong></td>
+                            <td>Serving diverse patient populations, cultural competency</td>
+                            <td>Primary care, community health, global medicine</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Additional Recommended Courses -->
+            <div class="course-category fade-in">
+                <h3>Additional Recommended Courses (Any Major)</h3>
+                <p>Beyond the requirements, these electives will strengthen your medical school readiness.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Helps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Human Anatomy</strong></td>
+                            <td>Gives you a major head start in the most intensive first-year medical school course</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Physiology</strong></td>
+                            <td>Understanding body systems and organ function&mdash;the foundation of clinical medicine</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Microbiology</strong></td>
+                            <td>Bacteria, viruses, fungi, and parasites&mdash;essential for understanding infectious disease</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Genetics</strong></td>
+                            <td>Personalized medicine and genetic testing are transforming healthcare</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Medical Ethics / Bioethics</strong></td>
+                            <td>Ethical decision-making is tested on Step exams and integral to clinical practice</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cell Biology / Molecular Biology</strong></td>
+                            <td>Deepens understanding of disease mechanisms at the cellular and molecular level</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Biostatistics / Epidemiology</strong></td>
+                            <td>Interpreting medical research, understanding clinical trials, and evidence-based medicine</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Medical Terminology</strong></td>
+                            <td>Learning the language of medicine early gives you a practical advantage in clinical settings</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VOLUNTEERING & EXPERIENCE ==================== -->
+    <section id="volunteering" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Volunteering &amp; Clinical Experience</h2>
+                <div class="accent-line"></div>
+                <p>Medical schools want to see that you've witnessed the realities of patient care and are committed to serving others. Clinical experience, research, and community service are essential parts of a strong application.</p>
+            </div>
+
+            <div class="volunteer-grid">
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#127973;</span>
+                    <h3>Hospital Volunteering</h3>
+                    <p>Volunteer in a local hospital&mdash;this is the most common and most important clinical experience for pre-med students. You'll interact with patients, observe healthcare teams, and understand hospital operations.</p>
+                    <div class="impact"><strong>Where to find:</strong> Contact your local hospital's volunteer services office. Most require a minimum commitment of 4&ndash;6 hours per week for several months. Start as early as age 16 at many hospitals.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#129658;</span>
+                    <h3>Physician Shadowing</h3>
+                    <p>Spend time observing a physician during their workday. Shadow doctors in multiple specialties to explore your interests and demonstrate exposure to diverse areas of medicine.</p>
+                    <div class="impact"><strong>Where to find:</strong> Ask your family physician, contact local medical societies, or use your school's pre-health advising office. Aim for 50&ndash;100+ hours across multiple specialties.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#128300;</span>
+                    <h3>Research Experience</h3>
+                    <p>Participate in biomedical, clinical, or public health research. Medical schools highly value research experience, especially at top-tier programs. It shows intellectual curiosity and scientific rigor.</p>
+                    <div class="impact"><strong>Where to find:</strong> University research labs (email professors directly), NIH Summer Internship Program, SPARK programs, or hospital-based research programs. Aim for at least one meaningful project.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#10084;&#65039;</span>
+                    <h3>Free Clinics &amp; Health Fairs</h3>
+                    <p>Volunteer at free clinics that serve uninsured and underserved populations. Help with patient intake, health screenings, or health education. This demonstrates a commitment to healthcare equity.</p>
+                    <div class="impact"><strong>Where to find:</strong> Search for free clinics in your area via the National Association of Free & Charitable Clinics. Many medical schools also run student-led free clinics that accept undergrad volunteers.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#128102;</span>
+                    <h3>Assisted Living &amp; Nursing Homes</h3>
+                    <p>Spend time with elderly residents by visiting, reading aloud, organizing activities, or simply providing companionship. This builds empathy and comfort with diverse patient populations.</p>
+                    <div class="impact"><strong>Where to find:</strong> Contact local assisted living facilities, nursing homes, or hospice organizations. Many welcome regular volunteers and offer structured programs.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#127757;</span>
+                    <h3>Global Health &amp; Medical Missions</h3>
+                    <p>Participate in global health programs or medical mission trips. This broadens your perspective on healthcare challenges and demonstrates cultural competency.</p>
+                    <div class="impact"><strong>Where to find:</strong> Organizations like Remote Area Medical, Global Brigades, or university-sponsored global health programs. Be thoughtful&mdash;choose ethical programs that prioritize community needs.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#128692;</span>
+                    <h3>EMT Certification &amp; Volunteering</h3>
+                    <p>Becoming a certified Emergency Medical Technician (EMT) provides direct, hands-on patient care experience. This is one of the most impactful clinical experiences you can have as a college student.</p>
+                    <div class="impact"><strong>Where to find:</strong> Local community colleges, fire departments, and ambulance services offer EMT certification courses. Volunteer or work with your campus EMS or local ambulance corps after certification.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#129504;</span>
+                    <h3>Mental Health &amp; Crisis Support</h3>
+                    <p>Volunteer with crisis hotlines, mental health awareness organizations, or peer counseling programs. Mental health is integral to medicine and shows compassion and emotional maturity.</p>
+                    <div class="impact"><strong>Where to find:</strong> Crisis Text Line, National Alliance on Mental Illness (NAMI) local chapters, campus peer counseling programs, or suicide prevention organizations.</div>
+                </div>
+            </div>
+
+            <!-- Internships & Programs -->
+            <div class="section-header" style="margin-top: 4rem;">
+                <h2>Summer Programs &amp; Internships</h2>
+                <div class="accent-line"></div>
+                <p>Competitive summer programs can transform your application. Many are designed specifically for high school and college students pursuing medicine.</p>
+            </div>
+
+            <div class="cards-grid fade-in">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">High School</div>
+                        <h3>Summer Research Programs</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>NIH High School Scientific Training and Enrichment Program (NIH STEP)</li>
+                            <li>Jackson Laboratory Summer Student Program</li>
+                            <li>Research Science Institute (RSI) at MIT</li>
+                            <li>Local university summer research internships for high school students</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">College</div>
+                        <h3>Pre-Med Summer Programs</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>NIH Summer Internship Program in Biomedical Research (SIP)</li>
+                            <li>Amgen Scholars Program at top research universities</li>
+                            <li>Howard Hughes Medical Institute (HHMI) research programs</li>
+                            <li>Medical school-sponsored pipeline programs (e.g., Summer Health Professions Education Program&mdash;SHPEP)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">Clinical</div>
+                        <h3>Clinical Immersion Programs</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Hospital-based clinical internship programs for college students</li>
+                            <li>Scribing (companies like ScribeAmerica) for direct clinical exposure</li>
+                            <li>Certified Nursing Assistant (CNA) training for hands-on patient care</li>
+                            <li>Community health center internships working with underserved populations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MCAT PREPARATION ==================== -->
+    <section id="mcat">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>MCAT Preparation</h2>
+                <div class="accent-line"></div>
+                <p>The Medical College Admission Test (MCAT) is a 7.5-hour exam that tests your knowledge of natural, behavioral, and social sciences along with critical reasoning. It is one of the most important factors in medical school admissions.</p>
+            </div>
+
+            <div class="mcat-grid fade-in">
+                <div class="mcat-card">
+                    <h3>Chemical &amp; Physical Foundations of Biological Systems</h3>
+                    <p>General chemistry, organic chemistry, physics, and biochemistry as they relate to living systems.</p>
+                    <div class="score-range">Section Score: 118&ndash;132</div>
+                </div>
+
+                <div class="mcat-card">
+                    <h3>Critical Analysis &amp; Reasoning Skills (CARS)</h3>
+                    <p>Reading comprehension of passages from humanities and social sciences. No outside science knowledge needed.</p>
+                    <div class="score-range">Section Score: 118&ndash;132</div>
+                </div>
+
+                <div class="mcat-card">
+                    <h3>Biological &amp; Biochemical Foundations of Living Systems</h3>
+                    <p>Biology, biochemistry, organic chemistry, and general chemistry as they relate to biological processes.</p>
+                    <div class="score-range">Section Score: 118&ndash;132</div>
+                </div>
+
+                <div class="mcat-card">
+                    <h3>Psychological, Social &amp; Biological Foundations of Behavior</h3>
+                    <p>Psychology, sociology, and biology concepts related to human behavior, perception, and social interactions.</p>
+                    <div class="score-range">Section Score: 118&ndash;132</div>
+                </div>
+            </div>
+
+            <div class="tips-grid fade-in" style="margin-top: 2.5rem;">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <div class="tip-content">
+                        <h3>Start Early &amp; Study Consistently</h3>
+                        <p>Plan 3&ndash;6 months of dedicated study. Most successful students study 300&ndash;350+ hours total. Create a schedule and stick to it&mdash;consistent daily study outperforms cramming.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <div class="tip-content">
+                        <h3>Use the Best Resources</h3>
+                        <p>AAMC official practice materials are essential. Popular study tools include Khan Academy MCAT prep (free), UWorld, Anki flashcards, and review books from Kaplan or Princeton Review.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <div class="tip-content">
+                        <h3>Know Your Score Targets</h3>
+                        <p>Total MCAT scores range from 472&ndash;528. The national average is around 501&ndash;502. Competitive scores for top medical schools are typically 515+. A score of 510+ makes you competitive at many schools.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div class="tip-content">
+                        <h3>Take Full-Length Practice Exams</h3>
+                        <p>Simulate real testing conditions with full 7.5-hour practice exams. AAMC offers official full-length tests. Take at least 5&ndash;8 practice exams before test day and thoroughly review each one.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MEDICAL SPECIALTIES ==================== -->
+    <section id="specialties" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Medical Specialties to Explore</h2>
+                <div class="accent-line"></div>
+                <p>Medicine offers dozens of specialties. While you won't choose until medical school, it's helpful to explore areas that interest you. Here are some of the most common specialties.</p>
+            </div>
+
+            <div class="specialties-grid fade-in">
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#129657;</span>
+                    <h4>Internal Medicine</h4>
+                    <p>Adult disease diagnosis &amp; treatment</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#128118;</span>
+                    <h4>Pediatrics</h4>
+                    <p>Healthcare for infants, children &amp; adolescents</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#129468;</span>
+                    <h4>Surgery</h4>
+                    <p>Operative treatment of injuries &amp; diseases</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#128147;</span>
+                    <h4>Cardiology</h4>
+                    <p>Heart &amp; cardiovascular system</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#129504;</span>
+                    <h4>Neurology</h4>
+                    <p>Brain, spinal cord &amp; nervous system</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#128566;</span>
+                    <h4>Psychiatry</h4>
+                    <p>Mental health diagnosis &amp; treatment</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#129460;</span>
+                    <h4>Orthopedics</h4>
+                    <p>Bones, joints, muscles &amp; ligaments</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#128065;</span>
+                    <h4>Ophthalmology</h4>
+                    <p>Eye diseases &amp; vision care</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#129729;</span>
+                    <h4>Dermatology</h4>
+                    <p>Skin, hair &amp; nail conditions</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#127968;</span>
+                    <h4>Family Medicine</h4>
+                    <p>Primary care for all ages</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#128680;</span>
+                    <h4>Emergency Medicine</h4>
+                    <p>Acute injuries &amp; urgent illness</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#129516;</span>
+                    <h4>Radiology</h4>
+                    <p>Medical imaging &amp; diagnostics</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#128696;</span>
+                    <h4>Anesthesiology</h4>
+                    <p>Pain management &amp; surgical sedation</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#9877;</span>
+                    <h4>Oncology</h4>
+                    <p>Cancer diagnosis &amp; treatment</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#129328;</span>
+                    <h4>OB/GYN</h4>
+                    <p>Women's health &amp; childbirth</p>
+                </div>
+                <div class="specialty-tag">
+                    <span class="sp-icon">&#127891;</span>
+                    <h4>Pathology</h4>
+                    <p>Lab diagnosis of disease</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS TO DEVELOP ==================== -->
+    <section id="skills">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Skills to Develop Now</h2>
+                <div class="accent-line"></div>
+                <p>Beyond grades and test scores, medical schools look for well-rounded individuals with strong interpersonal and intellectual skills. Start building these abilities today.</p>
+            </div>
+
+            <div class="skills-wrapper fade-in">
+                <div class="skill-box">
+                    <span class="skill-icon">&#129309;</span>
+                    <h3>Empathy &amp; Compassion</h3>
+                    <p>Medicine is fundamentally about caring for people. Volunteering, listening deeply, and understanding diverse perspectives build the empathy physicians need every day.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128300;</span>
+                    <h3>Scientific Curiosity</h3>
+                    <p>Stay curious about how the body works and how diseases develop. Read science articles, attend lectures, and ask questions&mdash;this mindset sustains you through years of study.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128172;</span>
+                    <h3>Communication</h3>
+                    <p>Doctors explain complex conditions in simple terms, deliver difficult news with sensitivity, and collaborate with diverse teams. Practice clear, compassionate communication.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#129504;</span>
+                    <h3>Critical Thinking</h3>
+                    <p>Diagnosing illness requires analyzing symptoms, test results, and patient history. Develop the ability to evaluate evidence and consider multiple possibilities.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#9201;</span>
+                    <h3>Time Management</h3>
+                    <p>Pre-med coursework, volunteering, research, and applications demand excellent organizational skills. Learn to prioritize and manage heavy workloads now.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128170;</span>
+                    <h3>Resilience &amp; Grit</h3>
+                    <p>The road to becoming a doctor is long and demanding. Building mental toughness, handling setbacks gracefully, and maintaining motivation are essential to the journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== APPLICATION TIPS ==================== -->
+    <section id="tips" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Medical School Application Tips</h2>
+                <div class="accent-line"></div>
+                <p>Applying to medical school is a rigorous process. Here's how to build the strongest application possible, drawing on everything you've been building since high school.</p>
+            </div>
+
+            <div class="tips-grid fade-in">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <div class="tip-content">
+                        <h3>Maintain a High GPA (Science &amp; Overall)</h3>
+                        <p>Medical schools look at both your overall GPA and your science GPA (Biology, Chemistry, Physics, Math or "BCPM"). Aim for 3.7+ for competitive programs. Retaking courses for higher grades is possible but not ideal.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <div class="tip-content">
+                        <h3>Gain Meaningful Clinical Experience</h3>
+                        <p>Medical schools want to see that you've interacted with patients and understand the realities of healthcare. Volunteering, scribing, EMT work, or CNA jobs all count. Quality and reflection matter more than sheer hours.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <div class="tip-content">
+                        <h3>Pursue Research Early</h3>
+                        <p>Research demonstrates intellectual curiosity and scientific thinking. Aim to work in a lab for at least one year. Presenting at conferences or co-authoring a publication is a major plus, but not required.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div class="tip-content">
+                        <h3>Write a Compelling Personal Statement</h3>
+                        <p>Your personal statement should tell a genuine, specific story about why you want to be a physician. Avoid clich&eacute;s. Focus on pivotal experiences, what you learned, and how medicine became your calling.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">5</div>
+                    <div class="tip-content">
+                        <h3>Get Strong Letters of Recommendation</h3>
+                        <p>Most schools require 3&ndash;5 letters, typically from science faculty, a non-science professor, and a physician you've shadowed or worked with. Build relationships early&mdash;visit office hours and engage in class.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">6</div>
+                    <div class="tip-content">
+                        <h3>Show Commitment to Service</h3>
+                        <p>Long-term, consistent community service demonstrates character and a commitment to helping others. Don't just volunteer to check a box&mdash;find causes you genuinely care about and stick with them for years.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">7</div>
+                    <div class="tip-content">
+                        <h3>Prepare for Interviews</h3>
+                        <p>Medical school interviews (traditional, MMI, or panel) evaluate your maturity, communication skills, and ethical reasoning. Practice with mock interviews and prepare for common bioethics scenarios.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">8</div>
+                    <div class="tip-content">
+                        <h3>Apply Broadly &amp; Early</h3>
+                        <p>Most students apply to 15&ndash;25+ schools through AMCAS (MD) or AACOMAS (DO). Submit your primary application as early as possible (June) since many schools use rolling admissions. Research each school's mission and focus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="footer-content">
+            <h3>Your Future in Medicine Starts Now</h3>
+            <p>Every physician began exactly where you are today&mdash;as a student with a dream and the determination to make it real. The science courses you take, the patients you serve, the research you pursue, and the compassion you develop all build toward that white coat.</p>
+            <p>Stay curious, stay compassionate, and never lose sight of why you started this journey.</p>
+            <div class="disclaimer">
+                This guide is for informational purposes only. Always consult with your school counselor, pre-health advisor, and the specific medical schools you're interested in for the most current requirements and recommendations. Prerequisites and admissions requirements vary by school.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Scroll fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll offset for fixed nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 70;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
