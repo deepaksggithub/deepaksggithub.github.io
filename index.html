@@ -3,184 +3,537 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Riveda LLC - Your trusted partner for SharePoint consulting, implementation, and support services.">
-    <meta name="keywords" content="SharePoint, Microsoft 365, SharePoint Consulting, SharePoint Migration, SharePoint Development">
-    <title>Riveda LLC - SharePoint Consulting & Services</title>
+    <meta name="description" content="Riveda LLC — Expert SharePoint, Power Apps, and Power Automate consulting and implementation services.">
+    <meta name="keywords" content="SharePoint, Power Apps, Power Automate, Microsoft 365, Power Platform, Consulting">
+    <title>Riveda LLC — Microsoft Power Platform Experts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">Riveda<span>LLC</span></a>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Transform Your Business with SharePoint Excellence</h1>
-            <p>Expert SharePoint consulting and implementation services to modernize your collaboration and productivity</p>
-            <a href="#contact" class="cta-button">Get Started Today</a>
+    <!-- ============================================================
+         NAVIGATION
+    ============================================================ -->
+    <header class="header" id="header">
+        <nav>
+            <div class="container nav__inner">
+                <a href="#home" class="nav__logo">Riveda<span>LLC</span></a>
+
+                <ul class="nav__links" id="navLinks">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#sharepoint">SharePoint</a></li>
+                    <li><a href="#powerapps">Power Apps</a></li>
+                    <li><a href="#powerautomate">Power Automate</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="nav__cta">Get Started</a></li>
+                </ul>
+
+                <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="home">
+        <div class="container hero__inner">
+            <div class="hero__badge">
+                <i class="fa-solid fa-check-circle"></i>&nbsp; Microsoft Power Platform Partner
+            </div>
+            <h1 class="hero__title">
+                Modernize Your Business with Microsoft Power Platform
+            </h1>
+            <p class="hero__sub">
+                We deliver expert SharePoint, Power Apps, and Power Automate solutions that transform how your organization collaborates, builds, and automates — faster than you thought possible.
+            </p>
+            <div class="hero__actions">
+                <a href="#contact" class="btn btn--white">Start Your Project</a>
+                <a href="#services" class="btn btn--ghost">Explore Services</a>
+            </div>
+            <div class="hero__pills">
+                <span><i class="fa-solid fa-check"></i> SharePoint</span>
+                <span><i class="fa-solid fa-check"></i> Power Apps</span>
+                <span><i class="fa-solid fa-check"></i> Power Automate</span>
+                <span><i class="fa-solid fa-check"></i> Microsoft 365</span>
+            </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- ============================================================
+         PLATFORM OVERVIEW
+    ============================================================ -->
+    <section class="platforms" id="services">
         <div class="container">
-            <h2>Our SharePoint Services</h2>
+            <div class="section-header">
+                <span class="section-tag">What We Do</span>
+                <h2>Three Platforms. One Trusted Partner.</h2>
+                <p>End-to-end expertise across the Microsoft Power Platform ecosystem — from collaborative intranets to custom apps and intelligent automation.</p>
+            </div>
+
+            <div class="platforms__grid">
+                <div class="platform-card reveal">
+                    <div class="platform-card__icon platform-card__icon--sp">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3>SharePoint</h3>
+                    <p>Intranet portals, document management, team sites, and collaborative workspaces tailored to how your organization works.</p>
+                    <a href="#sharepoint" class="platform-card__link">View SharePoint Services <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="platform-card platform-card--featured reveal">
+                    <div class="platform-card__icon platform-card__icon--pa">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3>Power Apps</h3>
+                    <p>Custom low-code business applications built fast — replacing paper forms, spreadsheets, and legacy systems with modern, mobile-ready experiences.</p>
+                    <a href="#powerapps" class="platform-card__link">View Power Apps Services <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="platform-card reveal">
+                    <div class="platform-card__icon platform-card__icon--pf">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3>Power Automate</h3>
+                    <p>Intelligent automation that eliminates repetitive tasks, accelerates approvals, and connects your business systems without manual work.</p>
+                    <a href="#powerautomate" class="platform-card__link">View Power Automate Services <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SHAREPOINT SERVICES
+    ============================================================ -->
+    <section class="service-section service-section--alt" id="sharepoint">
+        <div class="container">
+            <div class="service-section__header reveal">
+                <div class="service-section__badge service-section__badge--sp">
+                    <i class="fa-solid fa-layer-group"></i>&nbsp; SharePoint
+                </div>
+                <h2>SharePoint Services</h2>
+                <p>From initial deployment to ongoing governance, we cover every stage of your SharePoint journey — on-premises, hybrid, or SharePoint Online.</p>
+            </div>
+
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">&#128187;</div>
-                    <h3>SharePoint Consulting</h3>
-                    <p>Strategic guidance to help you maximize your SharePoint investment. We assess your needs and design solutions that align with your business objectives.</p>
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--sp">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3>Consulting & Strategy</h3>
+                    <p>Assess your current environment, define your information architecture, and build a roadmap that aligns SharePoint with your business objectives.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">&#128295;</div>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--sp">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
                     <h3>Implementation & Configuration</h3>
-                    <p>End-to-end SharePoint implementation services, from initial setup to custom configuration tailored to your organization's workflow.</p>
+                    <p>End-to-end deployment of SharePoint Online or on-premises, with tailored site structures, permissions, content types, and metadata.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">&#128640;</div>
-                    <h3>SharePoint Migration</h3>
-                    <p>Seamless migration services from legacy systems to SharePoint Online or SharePoint Server with minimal disruption to your operations.</p>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--sp">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+                    <h3>Migration Services</h3>
+                    <p>Migrate seamlessly from legacy file shares, older SharePoint versions, or competing platforms with minimal disruption and zero data loss.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">&#128736;</div>
-                    <h3>Custom Development</h3>
-                    <p>Tailored SharePoint solutions including custom workflows, web parts, forms, and integrations with third-party applications.</p>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--sp">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>Custom Development (SPFx)</h3>
+                    <p>Build custom web parts, SPFx extensions, and branded intranet experiences tailored precisely to your unique requirements.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">&#128202;</div>
-                    <h3>Power Platform Integration</h3>
-                    <p>Leverage Power Apps, Power Automate, and Power BI to extend SharePoint capabilities and automate business processes.</p>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--sp">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>Governance & Security</h3>
+                    <p>Define policies, manage permissions, and implement data governance frameworks that keep your SharePoint secure and compliant.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">&#128161;</div>
-                    <h3>Training & Support</h3>
-                    <p>Comprehensive training programs and ongoing support to ensure your team maximizes SharePoint's potential.</p>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--sp">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3>Training & Managed Support</h3>
+                    <p>Targeted user training and ongoing managed support services to maximize platform adoption and keep your environment healthy.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- ============================================================
+         POWER APPS SERVICES
+    ============================================================ -->
+    <section class="service-section" id="powerapps">
         <div class="container">
-            <h2>About Riveda LLC</h2>
-            <div class="about-content">
-                <p>Riveda LLC is a leading SharePoint consulting firm dedicated to helping organizations harness the full power of Microsoft SharePoint and the Microsoft 365 ecosystem.</p>
-                <p>With years of experience and a team of certified SharePoint professionals, we deliver innovative solutions that drive collaboration, enhance productivity, and transform business processes.</p>
-                <p>Our commitment to excellence and customer satisfaction has made us a trusted partner for businesses of all sizes across various industries.</p>
+            <div class="service-section__header reveal">
+                <div class="service-section__badge service-section__badge--pa">
+                    <i class="fa-solid fa-mobile-screen-button"></i>&nbsp; Power Apps
+                </div>
+                <h2>Power Apps Services</h2>
+                <p>Rapidly build business apps that run on any device, connect to any data source, and solve real problems — without the overhead of traditional development.</p>
+            </div>
 
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">100+</div>
-                        <div class="stat-label">Projects Completed</div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--pa">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Happy Clients</div>
+                    <h3>App Discovery & Design</h3>
+                    <p>We identify high-value automation opportunities and design app experiences through wireframes and stakeholder workshops before writing a single line of formula.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--pa">
+                        <i class="fa-solid fa-paintbrush"></i>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Years Experience</div>
+                    <h3>Canvas App Development</h3>
+                    <p>Pixel-perfect canvas apps with intuitive UX, built to replace paper forms, manual spreadsheets, and aging legacy systems on any device.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--pa">
+                        <i class="fa-solid fa-table-columns"></i>
+                    </div>
+                    <h3>Model-Driven Apps</h3>
+                    <p>Data-centric model-driven applications on Dataverse for complex processes like case management, CRM, compliance tracking, and more.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--pa">
+                        <i class="fa-solid fa-plug"></i>
+                    </div>
+                    <h3>Integrations & Connectors</h3>
+                    <p>Connect Power Apps to SharePoint, Dynamics 365, SQL, SAP, Salesforce, and hundreds of other systems via standard or custom connectors.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--pa">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>Copilot & AI Integration</h3>
+                    <p>Incorporate AI Builder and Copilot capabilities into your Power Apps for intelligent document processing and natural language interactions.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--pa">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <h3>App Modernization</h3>
+                    <p>Retire outdated InfoPath forms, Access databases, and legacy desktop apps by migrating them to modern, maintainable Power Apps solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         POWER AUTOMATE SERVICES
+    ============================================================ -->
+    <section class="service-section service-section--alt" id="powerautomate">
+        <div class="container">
+            <div class="service-section__header reveal">
+                <div class="service-section__badge service-section__badge--pf">
+                    <i class="fa-solid fa-gears"></i>&nbsp; Power Automate
+                </div>
+                <h2>Power Automate Services</h2>
+                <p>Automate repetitive tasks, streamline approvals, and connect your systems with cloud-based workflows that run 24/7 without manual intervention.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--pf">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <h3>Workflow Automation</h3>
+                    <p>Design and build automated workflows that trigger on events across Microsoft 365, SharePoint, Teams, Outlook, and third-party services.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--pf">
+                        <i class="fa-solid fa-check-double"></i>
+                    </div>
+                    <h3>Approval Processes</h3>
+                    <p>Replace slow, untraceable email-based approvals with structured workflows for document reviews, expense requests, procurement, and HR processes.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--pf">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3>Robotic Process Automation</h3>
+                    <p>Automate desktop tasks and interactions with legacy applications using Power Automate Desktop and attended or unattended RPA flows.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--pf">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <h3>System Integration</h3>
+                    <p>Connect disparate business systems using Power Automate flows, eliminating data silos and error-prone manual data re-entry between platforms.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--pf">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <h3>Notifications & Alerts</h3>
+                    <p>Build smart notification systems that surface the right information to the right people at the right time — via email, Teams, SMS, or push.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-card__icon service-card__icon--pf">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3>Flow Audit & Optimization</h3>
+                    <p>Review existing automations for reliability gaps and performance issues, then refactor them to meet enterprise standards and scale reliably.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT
+    ============================================================ -->
+    <section class="about" id="about">
+        <div class="container about__inner">
+            <div class="about__content reveal">
+                <span class="section-tag">About Us</span>
+                <h2>A Dedicated Microsoft 365 Partner</h2>
+                <p>Riveda LLC is a specialized consulting firm helping organizations unlock the full potential of the Microsoft Power Platform. Our team combines deep technical expertise with a business-first mindset on every engagement.</p>
+                <p>Whether you are beginning your digital transformation journey or scaling existing solutions, we design and deliver outcomes that matter to your users and your bottom line.</p>
+                <a href="#contact" class="btn btn--primary" style="margin-top: 8px;">Work With Us</a>
+            </div>
+
+            <div class="about__stats reveal">
+                <div class="stat-card">
+                    <div class="stat-card__number">100<span>+</span></div>
+                    <div class="stat-card__label">Projects Delivered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__number">50<span>+</span></div>
+                    <div class="stat-card__label">Happy Clients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__number">10<span>+</span></div>
+                    <div class="stat-card__label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__number">3</div>
+                    <div class="stat-card__label">Core Platforms</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         HOW WE WORK
+    ============================================================ -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Process</span>
+                <h2>How We Deliver Results</h2>
+                <p>A structured, transparent approach from initial discovery all the way through ongoing support.</p>
+            </div>
+
+            <div class="process__steps">
+                <div class="process-step reveal">
+                    <div class="process-step__number">01</div>
+                    <div class="process-step__content">
+                        <h3>Discovery</h3>
+                        <p>We start by understanding your business goals, existing systems, and user needs through workshops and stakeholder interviews.</p>
+                    </div>
+                </div>
+
+                <div class="process-step reveal">
+                    <div class="process-step__number">02</div>
+                    <div class="process-step__content">
+                        <h3>Design & Plan</h3>
+                        <p>We define the solution architecture, create wireframes or prototypes, and deliver a clear project plan with milestones and timelines.</p>
+                    </div>
+                </div>
+
+                <div class="process-step reveal">
+                    <div class="process-step__number">03</div>
+                    <div class="process-step__content">
+                        <h3>Build & Configure</h3>
+                        <p>Our consultants build in iterative sprints, sharing progress and incorporating your feedback at every stage to stay aligned.</p>
+                    </div>
+                </div>
+
+                <div class="process-step reveal">
+                    <div class="process-step__number">04</div>
+                    <div class="process-step__content">
+                        <h3>Deploy & Train</h3>
+                        <p>We deploy to production and provide hands-on training sessions so your team can use the solution confidently from day one.</p>
+                    </div>
+                </div>
+
+                <div class="process-step reveal">
+                    <div class="process-step__number">05</div>
+                    <div class="process-step__content">
+                        <h3>Support & Evolve</h3>
+                        <p>Ongoing managed support and enhancement services ensure your solution grows alongside your organization's changing needs.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section id="why-choose-us" class="why-choose-us">
+    <!-- ============================================================
+         WHY CHOOSE US
+    ============================================================ -->
+    <section class="why-us">
         <div class="container">
-            <h2>Why Choose Riveda LLC?</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">&#127891;</div>
-                    <h3>Certified Experts</h3>
-                    <p>Microsoft-certified professionals with deep SharePoint expertise</p>
+            <div class="section-header">
+                <span class="section-tag">Why Riveda</span>
+                <h2>What Sets Us Apart</h2>
+            </div>
+
+            <div class="why-us__grid">
+                <div class="why-card reveal">
+                    <div class="why-card__icon">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3>Certified Professionals</h3>
+                    <p>Our team holds Microsoft certifications across SharePoint, Power Platform, and Microsoft 365 administration.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">&#127919;</div>
-                    <h3>Proven Track Record</h3>
-                    <p>Successfully delivered solutions for diverse industries</p>
+
+                <div class="why-card reveal">
+                    <div class="why-card__icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>Business-First Thinking</h3>
+                    <p>We focus on outcomes, not technology. Every solution is designed around your real business objectives and user needs.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">&#128188;</div>
-                    <h3>Business-Focused</h3>
-                    <p>Solutions aligned with your strategic business goals</p>
+
+                <div class="why-card reveal">
+                    <div class="why-card__icon">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3>Transparent Partnership</h3>
+                    <p>Clear communication, honest timelines, and no surprises. We work as a trusted extension of your own team.</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">&#128336;</div>
-                    <h3>Timely Delivery</h3>
-                    <p>Commitment to on-time project completion</p>
+
+                <div class="why-card reveal">
+                    <div class="why-card__icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3>Fast Time to Value</h3>
+                    <p>Proven delivery methodologies and reusable accelerators mean faster deployment without compromising on quality.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-content">
-                <p>Ready to transform your business with SharePoint? Contact us today to discuss your project requirements.</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon">&#128231;</span>
+    <!-- ============================================================
+         CONTACT
+    ============================================================ -->
+    <section class="contact" id="contact">
+        <div class="container contact__inner">
+            <div class="contact__text reveal">
+                <span class="section-tag section-tag--light">Get In Touch</span>
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Tell us about your project and we will be in touch within one business day to discuss how we can help you move forward.</p>
+
+                <div class="contact__details">
+                    <div class="contact__detail">
+                        <span class="contact__detail-icon"><i class="fa-solid fa-envelope"></i></span>
                         <a href="mailto:info@rivedallc.com">info@rivedallc.com</a>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">&#128222;</span>
-                        <span>Contact us for consultation</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">&#128205;</span>
+                    <div class="contact__detail">
+                        <span class="contact__detail-icon"><i class="fa-solid fa-globe"></i></span>
                         <span>Serving clients nationwide</span>
                     </div>
+                    <div class="contact__detail">
+                        <span class="contact__detail-icon"><i class="fa-solid fa-clock"></i></span>
+                        <span>Response within 1 business day</span>
+                    </div>
                 </div>
+            </div>
+
+            <div class="contact__form-wrap reveal">
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Work Email</label>
+                        <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service area</option>
+                            <option>SharePoint Consulting</option>
+                            <option>Power Apps Development</option>
+                            <option>Power Automate</option>
+                            <option>Full Power Platform</option>
+                            <option>Microsoft 365</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell us about your project</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Briefly describe your requirements or goals..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full">
+                        Send Message &nbsp;<i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Riveda LLC. All rights reserved. | SharePoint Consulting & Services</p>
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="#home" class="footer__logo">Riveda<span>LLC</span></a>
+                <p>Microsoft Power Platform specialists helping organizations modernize with SharePoint, Power Apps, and Power Automate.</p>
+            </div>
+
+            <div class="footer__links">
+                <div class="footer__col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#sharepoint">SharePoint</a></li>
+                        <li><a href="#powerapps">Power Apps</a></li>
+                        <li><a href="#powerautomate">Power Automate</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#process">How We Work</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2024 Riveda LLC. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Smooth Scrolling Script -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-            } else {
-                nav.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
