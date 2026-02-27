@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path to Data Science &amp; AI | A Guide for High School Students</title>
+    <style>
+        :root {
+            --deep-purple: #1e1b4b;
+            --dark-purple: #312e81;
+            --vivid-purple: #7c3aed;
+            --electric-blue: #3b82f6;
+            --cyan: #06b6d4;
+            --light-cyan: #a5f3fc;
+            --mint: #d1fae5;
+            --cream: #f5f3ff;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --dark-text: #1f2937;
+            --accent-orange: #f59e0b;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--dark-text);
+            line-height: 1.7;
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--deep-purple);
+            z-index: 1000;
+            padding: 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--light-cyan);
+            padding: 1rem 0;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-logo span {
+            color: var(--white);
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 1.2rem 0.85rem;
+            display: block;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--light-cyan);
+            border-bottom-color: var(--cyan);
+            background: rgba(6, 182, 212, 0.05);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--light-cyan);
+            transition: 0.3s;
+        }
+
+        /* ===================== HERO ===================== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--deep-purple) 0%, var(--dark-purple) 40%, #1e3a5f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2306b6d4' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3Ccircle cx='0' cy='0' r='4'/%3E%3Ccircle cx='60' cy='0' r='4'/%3E%3Ccircle cx='0' cy='60' r='4'/%3E%3Ccircle cx='60' cy='60' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 820px;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero h1 em {
+            color: var(--light-cyan);
+            display: block;
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #9ca3af;
+            margin-bottom: 2.5rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero p.hero-desc {
+            font-size: 1.15rem;
+            color: #d1d5db;
+            margin-bottom: 2.5rem;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--vivid-purple);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 2px solid var(--vivid-purple);
+            border-radius: 3px;
+        }
+
+        .hero-cta:hover {
+            background: transparent;
+            color: var(--light-cyan);
+            border-color: var(--cyan);
+        }
+
+        /* ===================== SECTIONS ===================== */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            color: var(--dark-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .accent-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--vivid-purple), var(--cyan));
+            margin: 1rem auto;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .alt-bg {
+            background: var(--cream);
+        }
+
+        /* ===================== TIMELINE ===================== */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--vivid-purple), var(--cyan));
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 40px);
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 40px);
+        }
+
+        .timeline-item::before {
+            content: attr(data-year);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark-purple);
+            color: var(--light-cyan);
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+            border: 3px solid var(--vivid-purple);
+            text-align: center;
+            line-height: 1.2;
+            padding: 4px;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--vivid-purple);
+            max-width: 450px;
+        }
+
+        .timeline-content h3 {
+            color: var(--dark-purple);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* ===================== COURSE TABLES ===================== */
+        .course-category {
+            margin-bottom: 3rem;
+        }
+
+        .course-category h3 {
+            font-size: 1.4rem;
+            color: var(--dark-purple);
+            margin-bottom: 0.25rem;
+        }
+
+        .course-category > p {
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .course-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .course-table thead {
+            background: var(--dark-purple);
+            color: var(--white);
+        }
+
+        .course-table th {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .course-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.95rem;
+        }
+
+        .course-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .course-table tr:hover td {
+            background: #faf5ff;
+        }
+
+        .priority-essential {
+            color: var(--accent-red);
+            font-weight: 700;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .priority-recommended {
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .priority-helpful {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===================== CARDS ===================== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e5e7eb;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .card-header {
+            background: var(--dark-purple);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+        }
+
+        .card-header h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-header .card-tag {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--light-cyan);
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .card-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card-body li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f3f4f6;
+            color: var(--dark-text);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .card-body li:last-child {
+            border-bottom: none;
+        }
+
+        .card-body li::before {
+            content: '\2713';
+            color: var(--vivid-purple);
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .card-body p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* ===================== VOLUNTEERING / PROJECT CARDS ===================== */
+        .volunteer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .volunteer-card {
+            background: var(--white);
+            border-radius: 6px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--vivid-purple);
+            transition: transform 0.3s;
+        }
+
+        .volunteer-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .volunteer-card .v-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .volunteer-card h3 {
+            color: var(--dark-purple);
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .volunteer-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .volunteer-card .impact {
+            background: var(--cream);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--dark-purple);
+            font-style: italic;
+            border-left: 3px solid var(--vivid-purple);
+        }
+
+        /* ===================== SKILLS ===================== */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-box {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--white);
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-3px);
+        }
+
+        .skill-box .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .skill-box h3 {
+            color: var(--dark-purple);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-box p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===================== TIP CARDS ===================== */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-card {
+            display: flex;
+            gap: 1.5rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            align-items: flex-start;
+        }
+
+        .tip-number {
+            background: var(--dark-purple);
+            color: var(--light-cyan);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .tip-content h3 {
+            color: var(--dark-purple);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===================== CAREER PATHS ===================== */
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .career-tag {
+            background: var(--white);
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 1.25rem 1rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .career-tag:hover {
+            border-color: var(--vivid-purple);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(124, 58, 237, 0.1);
+        }
+
+        .career-tag .ct-icon {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .career-tag h4 {
+            color: var(--dark-purple);
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .career-tag p {
+            color: var(--gray);
+            font-size: 0.78rem;
+        }
+
+        /* ===================== TOOLS SHOWCASE ===================== */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+
+        .tool-card h3 {
+            color: var(--dark-purple);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tool-card p {
+            color: var(--gray);
+            font-size: 0.88rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-card .tool-badge {
+            background: var(--dark-purple);
+            color: var(--light-cyan);
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 3px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--deep-purple);
+            color: #9ca3af;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer h3 {
+            color: var(--light-cyan);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        footer .disclaimer {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #312e81;
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--deep-purple);
+                flex-direction: column;
+                padding: 1rem 0;
+                border-top: 1px solid #312e81;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.75rem 2rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 75px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .timeline-item::before {
+                left: 20px;
+                transform: translateX(-50%);
+                width: 40px;
+                height: 40px;
+                font-size: 0.5rem;
+            }
+
+            .timeline-content {
+                max-width: 100%;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-table {
+                font-size: 0.85rem;
+            }
+
+            .course-table th,
+            .course-table td {
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .cards-grid,
+            .volunteer-grid,
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .career-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ===================== ANIMATION ===================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">PATH TO <span>DATA SCIENCE &amp; AI</span></a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#high-school">High School</a></li>
+                <li><a href="#college">College</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#tips">Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-icon">&#129302;</span>
+            <div class="hero-subtitle">A Student's Guide</div>
+            <h1>Your Path to <em>Data Science &amp; AI</em></h1>
+            <p class="hero-desc">
+                A comprehensive guide for high school students who want to build the future with data, machine learning, and artificial intelligence. From the math you should master today to the projects that launch your career.
+            </p>
+            <a href="#roadmap" class="hero-cta">Start Your Journey</a>
+        </div>
+    </section>
+
+    <!-- ==================== ROADMAP TIMELINE ==================== -->
+    <section id="roadmap">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>The Roadmap to Data Science &amp; AI</h2>
+                <div class="accent-line"></div>
+                <p>Data Science and AI careers are among the fastest-growing in the world. Whether you aim for industry, research, or a startup, here are the milestones that will get you there.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in" data-year="9-12">
+                    <div class="timeline-content">
+                        <h3>High School (Grades 9&ndash;12)</h3>
+                        <p>Build a strong foundation in math and programming. Take AP math and computer science courses. Start personal coding projects, participate in math competitions, and explore data through science fairs.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="YEAR 1-4">
+                    <div class="timeline-content">
+                        <h3>Undergraduate Degree (4 Years)</h3>
+                        <p>Earn a bachelor's degree in Computer Science, Data Science, Mathematics, Statistics, or a related field. Take courses in machine learning, algorithms, linear algebra, probability, and databases. Build a portfolio of projects.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="INTERN">
+                    <div class="timeline-content">
+                        <h3>Internships &amp; Projects</h3>
+                        <p>Gain real-world experience through internships at tech companies, research labs, or startups. Contribute to open-source projects, compete in Kaggle competitions, and build an impressive GitHub portfolio.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="MS/PhD">
+                    <div class="timeline-content">
+                        <h3>Graduate School (Optional but Valuable)</h3>
+                        <p>A Master's degree (1&ndash;2 years) in Data Science, ML, or AI opens doors to senior roles and research positions. A Ph.D. (4&ndash;6 years) is the path to cutting-edge AI research, academia, and leadership at top AI labs.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in" data-year="CAREER">
+                    <div class="timeline-content">
+                        <h3>Career Launch</h3>
+                        <p>Enter the workforce as a Data Scientist, ML Engineer, AI Researcher, Data Analyst, or related role. The field offers strong salaries, high demand, and the opportunity to work on problems that shape the future.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HIGH SCHOOL COURSES ==================== -->
+    <section id="high-school" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>High School Courses</h2>
+                <div class="accent-line"></div>
+                <p>Data science and AI are built on a foundation of mathematics and computer science. The courses you take in high school directly prepare you for success in these fields at the college level and beyond.</p>
+            </div>
+
+            <!-- Essential Courses -->
+            <div class="course-category fade-in">
+                <h3>Essential Math &amp; CS Courses</h3>
+                <p>These are the most critical courses for building a data science and AI foundation. Prioritize these above all else.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AP Calculus AB/BC</strong></td>
+                            <td>Calculus underpins all of machine learning&mdash;gradient descent, optimization, and probability theory all require it</td>
+                            <td><span class="priority-essential">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Statistics</strong></td>
+                            <td>Statistics is the heart of data science&mdash;hypothesis testing, distributions, regression, and probability</td>
+                            <td><span class="priority-essential">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Computer Science A (Java)</strong></td>
+                            <td>Core programming concepts: data structures, algorithms, object-oriented design&mdash;the backbone of any CS career</td>
+                            <td><span class="priority-essential">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Computer Science Principles</strong></td>
+                            <td>Broad introduction to computing, data analysis, the internet, and impact of technology on society</td>
+                            <td><span class="priority-essential">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pre-Calculus / Trigonometry</strong></td>
+                            <td>Prerequisite for calculus; trigonometric functions appear in signal processing and neural networks</td>
+                            <td><span class="priority-essential">Essential</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Recommended Courses -->
+            <div class="course-category fade-in">
+                <h3>Strongly Recommended Courses</h3>
+                <p>These courses deepen your mathematical thinking and expose you to adjacent disciplines that data scientists draw upon.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AP Physics 1 (or C: Mechanics)</strong></td>
+                            <td>Builds mathematical modeling skills and introduces concepts used in simulations and robotics</td>
+                            <td><span class="priority-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Linear Algebra (if offered)</strong></td>
+                            <td>The single most important math course for machine learning&mdash;vectors, matrices, and transformations power every neural network</td>
+                            <td><span class="priority-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP English Language &amp; Composition</strong></td>
+                            <td>Data scientists must communicate findings clearly through reports, presentations, and data storytelling</td>
+                            <td><span class="priority-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Psychology</strong></td>
+                            <td>Understanding human cognition and behavior informs AI design, UX research, and ethical AI development</td>
+                            <td><span class="priority-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Economics (Micro or Macro)</strong></td>
+                            <td>Economics uses statistical models extensively; many data science roles are in finance, marketing, and business analytics</td>
+                            <td><span class="priority-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Biology</strong></td>
+                            <td>Bioinformatics and computational biology are booming areas of data science and AI application</td>
+                            <td><span class="priority-recommended">Recommended</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Beneficial Electives -->
+            <div class="course-category fade-in">
+                <h3>Beneficial Electives</h3>
+                <p>These electives strengthen specific skills that set strong data science candidates apart.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Robotics / Engineering</strong></td>
+                            <td>Hands-on application of programming, sensors, and autonomous decision-making&mdash;the physical side of AI</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Graphic Design / Digital Media</strong></td>
+                            <td>Data visualization is a core data science skill; understanding design principles improves charts, dashboards, and presentations</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Philosophy / Logic</strong></td>
+                            <td>Formal logic is fundamental to algorithms and AI; ethics courses prepare you for responsible AI development</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Business / Entrepreneurship</strong></td>
+                            <td>Understanding business context is essential for applied data science&mdash;knowing what problems to solve matters as much as how</td>
+                            <td><span class="priority-helpful">Helpful</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- High School Activities -->
+            <div class="section-header" style="margin-top: 3rem;">
+                <h2>High School Activities</h2>
+                <div class="accent-line"></div>
+                <p>The best way to stand out is to start building, competing, and creating now. These activities demonstrate initiative and real skills.</p>
+            </div>
+
+            <div class="cards-grid fade-in">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">Competition</div>
+                        <h3>Math Competitions</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Mathematical problem-solving is the backbone of AI and data science. Competition math builds the creative thinking that textbooks alone cannot.</p>
+                        <ul>
+                            <li>AMC 10/12, AIME, and USAMO for problem-solving excellence</li>
+                            <li>MATHCOUNTS for foundational competition math skills</li>
+                            <li>Math League and Mu Alpha Theta for team-based competitions</li>
+                            <li>Strong math competition results impress top CS programs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">Competition</div>
+                        <h3>Programming Contests &amp; Hackathons</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Competitive programming sharpens algorithmic thinking, and hackathons teach you to build real solutions under time pressure.</p>
+                        <ul>
+                            <li>USACO (USA Computing Olympiad) for algorithmic programming</li>
+                            <li>Hackathons (MLH, local events) to build projects in 24&ndash;48 hours</li>
+                            <li>Google Code Jam, Codeforces, and LeetCode for practice</li>
+                            <li>Kaggle competitions to solve real data science problems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tag">Club &amp; Research</div>
+                        <h3>CS Clubs &amp; Personal Projects</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Nothing demonstrates your passion like building things on your own. Start a coding club, contribute to open source, or build an app that solves a real problem.</p>
+                        <ul>
+                            <li>Start or join a coding / CS club at your school</li>
+                            <li>Build personal projects and publish them on GitHub</li>
+                            <li>Contribute to open-source projects to learn from experienced developers</li>
+                            <li>Conduct independent research&mdash;enter science fairs with a data or AI project</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COLLEGE COURSES & MAJORS ==================== -->
+    <section id="college">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>College Courses &amp; Majors</h2>
+                <div class="accent-line"></div>
+                <p>A strong undergraduate education in CS, math, or a related field provides the theoretical foundation and practical skills for a career in data science and AI. Here's what to study and why.</p>
+            </div>
+
+            <!-- Top Majors -->
+            <div class="course-category fade-in">
+                <h3>Top Undergraduate Majors</h3>
+                <p>These majors provide the strongest preparation for data science and AI careers.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Major</th>
+                            <th>Strengths for Data Science / AI</th>
+                            <th>Career Path</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Computer Science</strong></td>
+                            <td>Algorithms, data structures, software engineering, AI/ML courses built into the curriculum</td>
+                            <td>ML Engineer, Software Engineer, AI Researcher</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Science</strong></td>
+                            <td>Purpose-built for the field&mdash;combines stats, CS, and domain knowledge with hands-on projects</td>
+                            <td>Data Scientist, Data Analyst, Analytics Lead</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mathematics / Applied Math</strong></td>
+                            <td>Deep theoretical foundation in linear algebra, optimization, probability, and analysis</td>
+                            <td>AI Researcher, Quantitative Analyst, Research Scientist</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Statistics</strong></td>
+                            <td>Rigorous training in probability, inference, regression, and experimental design</td>
+                            <td>Statistician, Data Scientist, Biostatistician</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Electrical / Computer Engineering</strong></td>
+                            <td>Hardware-level understanding of computing, signal processing, embedded systems</td>
+                            <td>Robotics Engineer, Hardware ML, Autonomous Systems</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Standout Majors -->
+            <div class="course-category fade-in">
+                <h3>Standout Non-Traditional Majors</h3>
+                <p>These majors paired with strong CS and math coursework can differentiate you and open unique niches.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Major</th>
+                            <th>Strengths for Data Science / AI</th>
+                            <th>Specialization</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Physics</strong></td>
+                            <td>Mathematical modeling, simulation, and complex systems thinking</td>
+                            <td>Scientific computing, quantum ML, climate modeling</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Economics</strong></td>
+                            <td>Econometrics, causal inference, market modeling, behavioral analysis</td>
+                            <td>FinTech, business analytics, policy modeling</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cognitive Science</strong></td>
+                            <td>Human cognition, perception, language&mdash;the inspiration behind AI architectures</td>
+                            <td>NLP, human-computer interaction, AI safety</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Biology / Bioinformatics</strong></td>
+                            <td>Genomics, protein modeling, drug discovery using computational methods</td>
+                            <td>Computational biology, health AI, biotech</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Linguistics</strong></td>
+                            <td>Language structure and semantics&mdash;directly relevant to NLP and large language models</td>
+                            <td>NLP, conversational AI, machine translation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Core College Courses -->
+            <div class="course-category fade-in">
+                <h3>Core College Courses to Take (Any Major)</h3>
+                <p>Regardless of your major, these courses form the core knowledge required for data science and AI.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It's Critical</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Linear Algebra</strong></td>
+                            <td>Vectors, matrices, eigenvalues, and transformations power virtually every ML algorithm and neural network</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Probability &amp; Statistics</strong></td>
+                            <td>Bayesian reasoning, distributions, hypothesis testing&mdash;the mathematical language of data science</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multivariable Calculus</strong></td>
+                            <td>Gradients, partial derivatives, and optimization are how neural networks learn</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Structures &amp; Algorithms</strong></td>
+                            <td>Efficient computation is essential&mdash;sorting, searching, graphs, trees, and complexity analysis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Introduction to Machine Learning</strong></td>
+                            <td>Supervised and unsupervised learning, model evaluation, and the foundational ML algorithms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deep Learning / Neural Networks</strong></td>
+                            <td>CNNs, RNNs, transformers, and the architectures behind modern AI breakthroughs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Database Systems</strong></td>
+                            <td>SQL, data modeling, and database design&mdash;data scientists work with databases daily</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Natural Language Processing (NLP)</strong></td>
+                            <td>Text analysis, language models, and the technology behind chatbots, translation, and search</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Computer Vision</strong></td>
+                            <td>Image recognition, object detection, and generative models for visual data</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Ethics &amp; Society</strong></td>
+                            <td>Bias in AI, fairness, privacy, and the societal impact of data-driven decisions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Visualization</strong></td>
+                            <td>Turning data into clear, actionable visual stories&mdash;a critical communication skill for data professionals</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Optimization</strong></td>
+                            <td>Convex optimization, gradient methods, and constraint satisfaction&mdash;the engines that train AI models</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJECTS & VOLUNTEERING ==================== -->
+    <section id="projects" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Projects, Volunteering &amp; Experience</h2>
+                <div class="accent-line"></div>
+                <p>In data science and AI, your portfolio of projects and practical experience often matters more than your degree alone. Start building, contributing, and volunteering now.</p>
+            </div>
+
+            <div class="volunteer-grid">
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#128187;</span>
+                    <h3>Build Personal Data Projects</h3>
+                    <p>Find a dataset that interests you and analyze it end-to-end: clean the data, explore patterns, build a model, and share your findings. This is the single best way to demonstrate data science skills.</p>
+                    <div class="impact"><strong>Ideas:</strong> Analyze local weather patterns, build a movie recommendation system, predict sports outcomes, classify images, or analyze social media trends. Publish everything on GitHub with clear documentation.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#127942;</span>
+                    <h3>Kaggle Competitions</h3>
+                    <p>Kaggle hosts data science competitions where you solve real problems using real datasets. Competing (even without winning) teaches you practical ML skills, creative feature engineering, and model tuning.</p>
+                    <div class="impact"><strong>How to start:</strong> Create a free Kaggle account. Begin with "Getting Started" competitions like Titanic or Housing Prices. Study top solutions to learn advanced techniques. Earn medals to build your profile.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#128218;</span>
+                    <h3>Open-Source Contributions</h3>
+                    <p>Contributing to open-source data science and ML projects shows collaboration skills and technical depth. Start with documentation fixes, then work your way up to code contributions.</p>
+                    <div class="impact"><strong>Where to start:</strong> Look for "good first issue" labels on GitHub repositories like scikit-learn, pandas, TensorFlow, Hugging Face, or smaller tools you use. Even small contributions build credibility.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#128300;</span>
+                    <h3>Research with Professors</h3>
+                    <p>Join a university research lab working on AI, ML, NLP, computer vision, or computational science. Research experience is essential for graduate school and highly valued by top employers.</p>
+                    <div class="impact"><strong>How to find:</strong> Email professors whose research interests you (be specific about their work). Apply to REU programs (Research Experiences for Undergraduates) funded by the NSF. Ask your own professors about openings.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#127891;</span>
+                    <h3>Teach &amp; Tutor Math/CS</h3>
+                    <p>Tutoring younger students or peers in math, programming, or data literacy deepens your own understanding and demonstrates leadership and communication skills.</p>
+                    <div class="impact"><strong>Where to find:</strong> Your school's tutoring center, community organizations, Code.org volunteer programs, or create your own YouTube tutorials or blog posts explaining data science concepts.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#127760;</span>
+                    <h3>Data for Social Good</h3>
+                    <p>Volunteer your data skills for nonprofit organizations and social causes. Many nonprofits desperately need help analyzing data but lack the technical resources.</p>
+                    <div class="impact"><strong>Where to find:</strong> DataKind (volunteer data science for social impact), Statistics Without Borders, Code for America, local nonprofits that need data analysis, or your city's open data portal.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#128640;</span>
+                    <h3>Hackathons &amp; AI Challenges</h3>
+                    <p>Hackathons push you to build working prototypes in 24&ndash;48 hours. AI-focused hackathons specifically let you apply ML and data skills to real problems in a team setting.</p>
+                    <div class="impact"><strong>Where to find:</strong> Major League Hacking (MLH) events, university-hosted hackathons, corporate AI challenges from Google, Microsoft, or Meta, and AI safety hackathons.</div>
+                </div>
+
+                <div class="volunteer-card fade-in">
+                    <span class="v-icon">&#128188;</span>
+                    <h3>Internships</h3>
+                    <p>Internships at tech companies, startups, research labs, or data-driven organizations are the most direct path to a career. Start applying as early as your sophomore year of college.</p>
+                    <div class="impact"><strong>Where to find:</strong> Apply to FAANG/big tech (Google, Meta, Amazon), AI startups, government data labs (NASA, national labs), and industry leaders. Many companies have dedicated data science or ML intern roles.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TOOLS & TECHNOLOGIES ==================== -->
+    <section id="tools">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Tools &amp; Technologies to Learn</h2>
+                <div class="accent-line"></div>
+                <p>Data scientists and AI engineers use a specific toolkit. Start learning these tools in high school and deepen your expertise through college. Familiarity with these will set you apart.</p>
+            </div>
+
+            <div class="tools-grid fade-in">
+                <div class="tool-card">
+                    <h3>Python</h3>
+                    <p>The dominant language of data science and AI. Used for data manipulation, machine learning, deep learning, automation, and scientific computing.</p>
+                    <div class="tool-badge">Start in High School</div>
+                </div>
+                <div class="tool-card">
+                    <h3>Jupyter Notebooks</h3>
+                    <p>Interactive coding environment for data exploration, visualization, and sharing reproducible analysis. The standard tool for data science workflows.</p>
+                    <div class="tool-badge">Start in High School</div>
+                </div>
+                <div class="tool-card">
+                    <h3>pandas &amp; NumPy</h3>
+                    <p>Python libraries for data manipulation (pandas) and numerical computing (NumPy). Every data science project starts here.</p>
+                    <div class="tool-badge">Start in High School</div>
+                </div>
+                <div class="tool-card">
+                    <h3>scikit-learn</h3>
+                    <p>The go-to library for classical machine learning: classification, regression, clustering, model evaluation, and preprocessing.</p>
+                    <div class="tool-badge">High School / College</div>
+                </div>
+                <div class="tool-card">
+                    <h3>SQL</h3>
+                    <p>The language of databases. Every data scientist needs to query, filter, join, and aggregate data from relational databases.</p>
+                    <div class="tool-badge">Start in High School</div>
+                </div>
+                <div class="tool-card">
+                    <h3>Git &amp; GitHub</h3>
+                    <p>Version control for managing code, collaborating with others, and building a portfolio that employers and admissions committees can review.</p>
+                    <div class="tool-badge">Start in High School</div>
+                </div>
+                <div class="tool-card">
+                    <h3>TensorFlow / PyTorch</h3>
+                    <p>Deep learning frameworks for building neural networks, training AI models, and working with GPUs. PyTorch is dominant in research; TensorFlow in production.</p>
+                    <div class="tool-badge">College</div>
+                </div>
+                <div class="tool-card">
+                    <h3>Matplotlib &amp; Seaborn</h3>
+                    <p>Python visualization libraries for creating charts, plots, and statistical graphics. Essential for exploratory data analysis and presentations.</p>
+                    <div class="tool-badge">Start in High School</div>
+                </div>
+                <div class="tool-card">
+                    <h3>R (Statistical Computing)</h3>
+                    <p>A language built for statistics. Widely used in academia, biostatistics, and research. Excellent for statistical analysis and publication-quality visualizations.</p>
+                    <div class="tool-badge">College</div>
+                </div>
+                <div class="tool-card">
+                    <h3>Tableau / Power BI</h3>
+                    <p>Business intelligence tools for creating interactive dashboards and data visualizations without code. Used widely in industry for data reporting.</p>
+                    <div class="tool-badge">College</div>
+                </div>
+                <div class="tool-card">
+                    <h3>Linux &amp; Command Line</h3>
+                    <p>Most data science servers and cloud platforms run Linux. Command-line proficiency is essential for remote work, cloud computing, and automation.</p>
+                    <div class="tool-badge">High School / College</div>
+                </div>
+                <div class="tool-card">
+                    <h3>Cloud Platforms (AWS / GCP / Azure)</h3>
+                    <p>Cloud computing is where production AI runs. Learn to deploy models, manage data pipelines, and use GPU instances for training.</p>
+                    <div class="tool-badge">College / Career</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CAREER PATHS ==================== -->
+    <section id="careers" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Career Paths in Data Science &amp; AI</h2>
+                <div class="accent-line"></div>
+                <p>The field of data science and AI offers a wide variety of career paths across nearly every industry. Here are some of the most prominent roles and where they lead.</p>
+            </div>
+
+            <div class="career-grid fade-in">
+                <div class="career-tag">
+                    <span class="ct-icon">&#128202;</span>
+                    <h4>Data Scientist</h4>
+                    <p>Analyze data, build models, drive business decisions</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#129302;</span>
+                    <h4>ML Engineer</h4>
+                    <p>Build &amp; deploy machine learning systems at scale</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128300;</span>
+                    <h4>AI Researcher</h4>
+                    <p>Advance the frontiers of artificial intelligence</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128200;</span>
+                    <h4>Data Analyst</h4>
+                    <p>Transform raw data into actionable business insights</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128483;</span>
+                    <h4>NLP Engineer</h4>
+                    <p>Build systems that understand human language</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128065;</span>
+                    <h4>Computer Vision Engineer</h4>
+                    <p>Teach machines to see &amp; interpret images</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128640;</span>
+                    <h4>Robotics Engineer</h4>
+                    <p>Build intelligent robots &amp; autonomous systems</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128176;</span>
+                    <h4>Quantitative Analyst</h4>
+                    <p>Use math &amp; ML for financial modeling &amp; trading</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#127973;</span>
+                    <h4>Health AI Specialist</h4>
+                    <p>Apply AI to medical imaging, drug discovery &amp; diagnostics</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128736;</span>
+                    <h4>Data Engineer</h4>
+                    <p>Build the pipelines &amp; infrastructure that power data systems</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128272;</span>
+                    <h4>AI Safety Researcher</h4>
+                    <p>Ensure AI systems are safe, fair &amp; aligned with human values</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#127758;</span>
+                    <h4>AI Product Manager</h4>
+                    <p>Lead teams building AI-powered products &amp; features</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128218;</span>
+                    <h4>Professor / Academic</h4>
+                    <p>Teach &amp; research at universities (requires Ph.D.)</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#9889;</span>
+                    <h4>MLOps Engineer</h4>
+                    <p>Manage ML model deployment, monitoring &amp; lifecycle</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#127912;</span>
+                    <h4>Generative AI Engineer</h4>
+                    <p>Build creative AI tools for text, image &amp; audio generation</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128661;</span>
+                    <h4>Autonomous Systems Engineer</h4>
+                    <p>Develop self-driving cars, drones &amp; smart systems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS TO DEVELOP ==================== -->
+    <section id="skills">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Skills to Develop Now</h2>
+                <div class="accent-line"></div>
+                <p>Beyond technical knowledge, the most successful data scientists and AI practitioners share a common set of soft and hard skills. Start cultivating these early.</p>
+            </div>
+
+            <div class="skills-wrapper fade-in">
+                <div class="skill-box">
+                    <span class="skill-icon">&#129504;</span>
+                    <h3>Mathematical Thinking</h3>
+                    <p>The ability to formalize problems mathematically, think abstractly, and reason about quantities and relationships. Math is the language of data science.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128187;</span>
+                    <h3>Programming Fluency</h3>
+                    <p>Writing clean, efficient code should feel natural. Build fluency through daily practice, personal projects, and code reviews. Python is your primary tool.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128172;</span>
+                    <h3>Data Storytelling</h3>
+                    <p>The ability to translate complex analysis into clear, compelling narratives. The best data scientists can explain their findings to non-technical audiences.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128270;</span>
+                    <h3>Curiosity &amp; Self-Learning</h3>
+                    <p>AI and data science evolve rapidly. The ability to independently learn new tools, read research papers, and stay current is essential throughout your career.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128101;</span>
+                    <h3>Collaboration</h3>
+                    <p>Data science is a team sport. You'll work with engineers, designers, product managers, and domain experts. Strong communication and teamwork are vital.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#9878;</span>
+                    <h3>Ethical Reasoning</h3>
+                    <p>AI systems affect people's lives. Understanding bias, fairness, privacy, and the social impact of your work is a responsibility, not an afterthought.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== APPLICATION & CAREER TIPS ==================== -->
+    <section id="tips" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Tips for College &amp; Career Success</h2>
+                <div class="accent-line"></div>
+                <p>Whether you're aiming for a top CS program, a graduate school spot, or your first industry role, these strategies will help you stand out in the competitive field of data science and AI.</p>
+            </div>
+
+            <div class="tips-grid fade-in">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <div class="tip-content">
+                        <h3>Build a GitHub Portfolio Early</h3>
+                        <p>Your GitHub profile is your technical resume. Start in high school: publish clean, well-documented projects that show your progression. Include README files, data visualizations, and clear code. Admissions and hiring managers look at this.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <div class="tip-content">
+                        <h3>Master the Fundamentals of Math</h3>
+                        <p>Don't rush to build flashy AI projects without understanding the math behind them. Linear algebra, probability, calculus, and optimization are not optional&mdash;they're the foundation. Deep understanding separates great data scientists from average ones.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <div class="tip-content">
+                        <h3>Learn by Doing, Not Just Watching</h3>
+                        <p>Online courses and tutorials are great, but nothing replaces hands-on project work. For every concept you learn, apply it to a real dataset. Build something, break it, fix it, and share it.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div class="tip-content">
+                        <h3>Network and Find Mentors</h3>
+                        <p>Attend meetups, join online communities (Discord servers, Reddit's r/datascience, Twitter/X), and connect with professionals on LinkedIn. A mentor in the field can provide guidance, connections, and opportunities.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">5</div>
+                    <div class="tip-content">
+                        <h3>Read Research Papers</h3>
+                        <p>Start reading AI and ML research papers during college. ArXiv.org publishes the latest research for free. Understanding papers is a skill that takes practice&mdash;start with survey papers and blog post summaries before diving into raw papers.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">6</div>
+                    <div class="tip-content">
+                        <h3>Don't Ignore the "Soft" Skills</h3>
+                        <p>Communication, presentation, writing, and teamwork are just as important as coding. The best data scientists can explain complex models to a CEO in plain language. Take writing and presentation courses seriously.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">7</div>
+                    <div class="tip-content">
+                        <h3>Start Internships Early</h3>
+                        <p>Apply for data science or software engineering internships starting the summer after your freshman year. Even if your first internship isn't in ML, any technical internship builds skills, experience, and your resume.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">8</div>
+                    <div class="tip-content">
+                        <h3>Stay Ethical and Think About Impact</h3>
+                        <p>As AI becomes more powerful, so does the responsibility of the people building it. Study AI ethics, think critically about bias and fairness, and always consider who your work affects. Companies and schools value this awareness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="footer-content">
+            <h3>The Future Is Yours to Build</h3>
+            <p>Every AI breakthrough, every data-driven discovery, and every intelligent system was built by someone who started with curiosity and a willingness to learn. The tools, courses, and communities listed here are your launchpad.</p>
+            <p>Write code, analyze data, ask bold questions, and build things that matter.</p>
+            <div class="disclaimer">
+                This guide is for informational purposes only. The field of data science and AI evolves rapidly. Always consult with your school counselor, CS department advisors, and current industry professionals for the most up-to-date guidance. Program requirements and industry expectations change frequently.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Scroll fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll offset for fixed nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 70;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
