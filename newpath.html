@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The New Path | Thriving in the Age of AI &mdash; A Guide for High School Students</title>
+    <style>
+        :root {
+            --deep-dark: #09090b;
+            --dark-bg: #18181b;
+            --card-bg: #1e1e23;
+            --gradient-1: #f97316;
+            --gradient-2: #ec4899;
+            --gradient-3: #8b5cf6;
+            --gradient-4: #06b6d4;
+            --accent-orange: #fb923c;
+            --accent-pink: #f472b6;
+            --accent-purple: #a78bfa;
+            --accent-cyan: #22d3ee;
+            --accent-green: #34d399;
+            --accent-yellow: #fbbf24;
+            --white: #fafafa;
+            --light-text: #d4d4d8;
+            --muted: #71717a;
+            --border: #27272a;
+            --dark-text: #18181b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+            color: var(--light-text);
+            line-height: 1.7;
+            background: var(--deep-dark);
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            padding: 1rem 0;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 1.2rem 0.85rem;
+            display: block;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+            border-bottom-color: var(--gradient-2);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: 0.3s;
+        }
+
+        /* ===================== HERO ===================== */
+        .hero {
+            min-height: 100vh;
+            background: var(--deep-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 7rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+            animation: subtleFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes subtleFloat {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-2%, 2%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3), var(--gradient-4));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p.hero-desc {
+            font-size: 1.2rem;
+            color: var(--muted);
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            border-radius: 6px;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(249, 115, 22, 0.3);
+        }
+
+        /* ===================== SECTIONS ===================== */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .section-header .accent-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .alt-bg {
+            background: var(--dark-bg);
+        }
+
+        /* ===================== REALITY CHECK SECTION ===================== */
+        .reality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .reality-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reality-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .reality-card:hover {
+            border-color: #3f3f46;
+            transform: translateY(-3px);
+        }
+
+        .reality-card:hover::before {
+            opacity: 1;
+        }
+
+        .reality-card .r-icon {
+            font-size: 2rem;
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        .reality-card h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .reality-card p {
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        /* ===================== FRAMEWORK SECTION ===================== */
+        .framework-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .framework-pillar {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .framework-pillar:hover {
+            border-color: #3f3f46;
+            transform: translateY(-3px);
+        }
+
+        .pillar-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.2rem;
+            line-height: 50px;
+            margin-bottom: 1.25rem;
+        }
+
+        .framework-pillar h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .framework-pillar p {
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        /* ===================== COURSE / SKILL TABLES ===================== */
+        .course-category {
+            margin-bottom: 3rem;
+        }
+
+        .course-category h3 {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+
+        .course-category > p {
+            color: var(--muted);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .course-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .course-table thead {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.15));
+        }
+
+        .course-table th {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-purple);
+            font-weight: 700;
+        }
+
+        .course-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.93rem;
+            color: var(--light-text);
+        }
+
+        .course-table td strong {
+            color: var(--white);
+        }
+
+        .course-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .course-table tr:hover td {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .tag-essential {
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tag-recommended {
+            color: var(--accent-purple);
+            font-weight: 700;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tag-valuable {
+            color: var(--accent-cyan);
+            font-weight: 700;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===================== CARDS ===================== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .card-header {
+            padding: 1.5rem 2rem;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.1));
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-header h3 {
+            font-size: 1.15rem;
+            color: var(--white);
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+
+        .card-header .card-tag {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-pink);
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .card-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card-body li {
+            padding: 0.55rem 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--light-text);
+            font-size: 0.93rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .card-body li:last-child {
+            border-bottom: none;
+        }
+
+        .card-body li::before {
+            content: '\2192';
+            color: var(--accent-orange);
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .card-body p {
+            color: var(--muted);
+            font-size: 0.93rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ===================== MINDSET GRID ===================== */
+        .mindset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mindset-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .mindset-card:hover {
+            border-color: #3f3f46;
+            transform: translateY(-3px);
+        }
+
+        .mindset-card .m-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .mindset-card h3 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .mindset-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .mindset-card .callout {
+            background: rgba(139, 92, 246, 0.08);
+            border-left: 3px solid var(--accent-purple);
+            padding: 0.75rem 1rem;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.85rem;
+            color: var(--light-text);
+            font-style: italic;
+        }
+
+        /* ===================== COMPARE SECTION ===================== */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .compare-col {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .compare-header {
+            padding: 1.25rem 2rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .compare-col:first-child .compare-header {
+            background: rgba(239, 68, 68, 0.1);
+            color: #fca5a5;
+            border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .compare-col:last-child .compare-header {
+            background: rgba(52, 211, 153, 0.1);
+            color: var(--accent-green);
+            border-bottom: 1px solid rgba(52, 211, 153, 0.2);
+        }
+
+        .compare-body {
+            padding: 1.5rem 2rem;
+        }
+
+        .compare-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .compare-body li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--light-text);
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-start;
+        }
+
+        .compare-body li:last-child {
+            border-bottom: none;
+        }
+
+        .compare-col:first-child .compare-body li::before {
+            content: '\2717';
+            color: #f87171;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .compare-col:last-child .compare-body li::before {
+            content: '\2713';
+            color: var(--accent-green);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* ===================== TIP CARDS ===================== */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-card {
+            display: flex;
+            gap: 1.5rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            align-items: flex-start;
+            transition: all 0.3s;
+        }
+
+        .tip-card:hover {
+            border-color: #3f3f46;
+        }
+
+        .tip-number {
+            background: linear-gradient(135deg, var(--gradient-3), var(--gradient-2));
+            color: var(--white);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .tip-content h3 {
+            color: var(--white);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .tip-content p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* ===================== CAREER LANDSCAPE ===================== */
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .career-tag {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem 1.25rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .career-tag:hover {
+            border-color: var(--accent-purple);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.1);
+        }
+
+        .career-tag .ct-icon {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .career-tag h4 {
+            color: var(--white);
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .career-tag p {
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        .career-tag .tag-new {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+            color: var(--white);
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.4rem;
+        }
+
+        /* ===================== QUOTE BLOCK ===================== */
+        .quote-block {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: '\201C';
+            font-size: 5rem;
+            position: absolute;
+            top: -0.5rem;
+            left: 2rem;
+            color: var(--accent-purple);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .quote-block p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--light-text);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .quote-block .quote-author {
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-style: normal;
+        }
+
+        /* ===================== SKILLS HEX ===================== */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-box {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-3px);
+            border-color: #3f3f46;
+        }
+
+        .skill-box .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .skill-box h3 {
+            color: var(--white);
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .skill-box p {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--deep-dark);
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            padding: 3.5rem 2rem;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        footer p {
+            font-size: 0.92rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        footer .disclaimer {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(9, 9, 11, 0.98);
+                flex-direction: column;
+                padding: 1rem 0;
+                border-top: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.75rem 2rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .compare-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-table th,
+            .course-table td {
+                padding: 0.75rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .cards-grid,
+            .mindset-grid,
+            .reality-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .career-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ===================== ANIMATION ===================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">THE NEW PATH</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#reality">The Reality</a></li>
+                <li><a href="#framework">Framework</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#build">Build</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#mindsets">Mindsets</a></li>
+                <li><a href="#playbook">Playbook</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">A Guide for the AI Generation</div>
+            <h1>The Rules Have <span class="gradient-text">Changed.</span><br>Here's Your New Path.</h1>
+            <p class="hero-desc">
+                AI is rewriting the rules of every career. A new model drops every week. The skills that mattered five years ago may not matter five years from now. This guide helps high school students navigate the most important question of the decade: <strong style="color: var(--white);">What should I learn when AI can learn everything?</strong>
+            </p>
+            <a href="#reality" class="hero-cta">Face the Future</a>
+        </div>
+    </section>
+
+    <!-- ==================== THE NEW REALITY ==================== -->
+    <section id="reality" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>The New Reality</h2>
+                <div class="accent-line"></div>
+                <p>Before mapping your path, you need to understand how the landscape is shifting. AI isn't coming&mdash;it's already here, and it's changing what it means to be valuable in the workforce.</p>
+            </div>
+
+            <div class="reality-grid fade-in">
+                <div class="reality-card">
+                    <span class="r-icon">&#9889;</span>
+                    <h3>AI Can Now Do "Knowledge Work"</h3>
+                    <p>LLMs can write code, draft legal documents, analyze medical images, generate reports, and pass professional exams. Tasks that once required years of specialized training can now be done in seconds. The floor for competence has risen dramatically.</p>
+                </div>
+                <div class="reality-card">
+                    <span class="r-icon">&#128200;</span>
+                    <h3>The Rate of Change Is Accelerating</h3>
+                    <p>A new frontier model appears every few weeks. What's impossible today may be trivial tomorrow. Betting your entire career on one narrow skill set is riskier than ever. Adaptability is the new job security.</p>
+                </div>
+                <div class="reality-card">
+                    <span class="r-icon">&#129504;</span>
+                    <h3>Human + AI > Either Alone</h3>
+                    <p>The most productive people aren't those who ignore AI or those who rely on it completely. They're the ones who use AI as a multiplier for their uniquely human abilities&mdash;judgment, creativity, empathy, and leadership.</p>
+                </div>
+                <div class="reality-card">
+                    <span class="r-icon">&#128161;</span>
+                    <h3>New Jobs Are Being Created</h3>
+                    <p>AI isn't just eliminating jobs&mdash;it's creating entirely new ones that didn't exist two years ago. Prompt engineers, AI safety researchers, model evaluators, AI ethicists, and AI-augmented professionals in every field are in massive demand.</p>
+                </div>
+                <div class="reality-card">
+                    <span class="r-icon">&#127891;</span>
+                    <h3>Degrees Matter Less; Skills Matter More</h3>
+                    <p>Employers increasingly care about what you can do, not just where you went to school. Your portfolio, projects, and demonstrable skills are becoming more important than the name on your diploma.</p>
+                </div>
+                <div class="reality-card">
+                    <span class="r-icon">&#127757;</span>
+                    <h3>Every Field Becomes an AI Field</h3>
+                    <p>AI isn't just for tech workers. It's transforming healthcare, law, finance, education, agriculture, art, and science. The professionals who thrive will be domain experts who know how to leverage AI within their field.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WHAT AI CAN'T REPLACE ==================== -->
+    <section id="compare">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What AI Replaces vs. What It Can't</h2>
+                <div class="accent-line"></div>
+                <p>Understanding this distinction is the single most important insight for planning your future. Invest your time in the skills on the right.</p>
+            </div>
+
+            <div class="compare-grid fade-in">
+                <div class="compare-col">
+                    <div class="compare-header">AI Is Rapidly Replacing</div>
+                    <div class="compare-body">
+                        <ul>
+                            <li>Routine data entry and processing</li>
+                            <li>Basic code writing and debugging</li>
+                            <li>Simple legal document drafting</li>
+                            <li>Boilerplate content and copywriting</li>
+                            <li>Straightforward medical image analysis</li>
+                            <li>Standard financial reporting and analysis</li>
+                            <li>Basic translation and transcription</li>
+                            <li>Rote memorization-based knowledge work</li>
+                            <li>Template-based design and formatting</li>
+                            <li>Simple customer service interactions</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="compare-col">
+                    <div class="compare-header">Uniquely Human &amp; Growing in Value</div>
+                    <div class="compare-body">
+                        <ul>
+                            <li>Asking the right questions and framing problems</li>
+                            <li>Building trust and authentic relationships</li>
+                            <li>Leading teams through ambiguity and change</li>
+                            <li>Making ethical judgments in complex situations</li>
+                            <li>Creative vision and original artistic expression</li>
+                            <li>Deep empathy and emotional intelligence</li>
+                            <li>Physical skill and hands-on craftsmanship</li>
+                            <li>Cross-domain thinking and connecting unrelated ideas</li>
+                            <li>Persuasion, negotiation, and conflict resolution</li>
+                            <li>Accountability, ownership, and responsibility for outcomes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== THE FRAMEWORK ==================== -->
+    <section id="framework" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>The New Framework for Success</h2>
+                <div class="accent-line"></div>
+                <p>Instead of following one rigid career ladder, build yourself around five pillars that remain valuable no matter how AI evolves. Think of these as your personal operating system.</p>
+            </div>
+
+            <div class="framework-wrapper fade-in">
+                <div class="framework-pillar">
+                    <div class="pillar-number">1</div>
+                    <h3>AI Fluency</h3>
+                    <p>Learn to use AI tools as a power user. Understand how LLMs work, what they're good at, and where they fail. The ability to effectively collaborate with AI&mdash;prompting, evaluating output, and iterating&mdash;is becoming as fundamental as using the internet.</p>
+                </div>
+                <div class="framework-pillar">
+                    <div class="pillar-number">2</div>
+                    <h3>Deep Domain Expertise</h3>
+                    <p>Become genuinely excellent in at least one domain&mdash;medicine, law, engineering, science, business, art, or education. AI amplifies expertise; it doesn't replace it. A doctor who uses AI is more valuable than AI alone.</p>
+                </div>
+                <div class="framework-pillar">
+                    <div class="pillar-number">3</div>
+                    <h3>Interdisciplinary Thinking</h3>
+                    <p>The most valuable insights come from connecting ideas across fields. A biologist who understands machine learning. A designer who understands data. The intersection of two domains is where the most impactful work happens.</p>
+                </div>
+                <div class="framework-pillar">
+                    <div class="pillar-number">4</div>
+                    <h3>Human Connection</h3>
+                    <p>Leadership, empathy, communication, trust-building, and emotional intelligence cannot be automated. The ability to inspire a team, comfort a patient, or persuade a room will only grow in value as AI handles more technical tasks.</p>
+                </div>
+                <div class="framework-pillar">
+                    <div class="pillar-number">5</div>
+                    <h3>Continuous Reinvention</h3>
+                    <p>The willingness and ability to learn new skills, adapt to new tools, and pivot when necessary. The best career plan in the AI age isn't a destination&mdash;it's a commitment to lifelong learning and fearless adaptation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COURSES TO TAKE ==================== -->
+    <section id="courses">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What to Study: High School &amp; College</h2>
+                <div class="accent-line"></div>
+                <p>The right education for the AI age isn't just STEM. It's a strategic combination of technical literacy, critical thinking, communication, and creative problem-solving. Here's what to prioritize.</p>
+            </div>
+
+            <div class="course-category fade-in">
+                <h3>High School: Essential Courses for Any Future</h3>
+                <p>These courses build the core skills that every career in the AI era demands&mdash;regardless of what specific field you enter.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters in the AI Era</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AP Computer Science A or Principles</strong></td>
+                            <td>Computational thinking is now as essential as literacy. Understanding how software works makes you an informed user and builder of AI tools</td>
+                            <td><span class="tag-essential">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Statistics</strong></td>
+                            <td>Every AI system is built on probability and data. Understanding statistics lets you critically evaluate AI claims, research, and decisions</td>
+                            <td><span class="tag-essential">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Calculus (AB or BC)</strong></td>
+                            <td>Calculus underlies machine learning, physics, economics, and engineering. It's the language of optimization and change</td>
+                            <td><span class="tag-essential">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP English Language &amp; Composition</strong></td>
+                            <td>Clear, persuasive writing is AI-resistant. The ability to construct arguments, write compelling narratives, and communicate precisely becomes more valuable, not less</td>
+                            <td><span class="tag-essential">Essential</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Speech &amp; Debate</strong></td>
+                            <td>Public speaking, argumentation, and thinking on your feet are fundamentally human skills. AI can't stand in a room and earn trust</td>
+                            <td><span class="tag-essential">Essential</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="course-category fade-in">
+                <h3>High School: Strongly Recommended</h3>
+                <p>These courses strengthen your thinking, broaden your perspective, and develop uniquely human capabilities.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters in the AI Era</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AP Psychology</strong></td>
+                            <td>Understanding human behavior, decision-making, and cognition is essential for designing AI that serves people well</td>
+                            <td><span class="tag-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Philosophy / Ethics</strong></td>
+                            <td>AI raises profound ethical questions about bias, privacy, autonomy, and truth. Ethical reasoning is the most under-taught and over-needed skill</td>
+                            <td><span class="tag-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Physics</strong></td>
+                            <td>Teaches mathematical modeling and first-principles thinking&mdash;the ability to reason from fundamentals, not pattern-match</td>
+                            <td><span class="tag-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Economics (Micro or Macro)</strong></td>
+                            <td>AI is reshaping markets, labor, and business models. Understanding economic systems helps you see where opportunity is heading</td>
+                            <td><span class="tag-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AP Biology or Chemistry</strong></td>
+                            <td>Scientific literacy and experimental thinking. AI-driven biotech, drug discovery, and climate science are booming</td>
+                            <td><span class="tag-recommended">Recommended</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Foreign Language (Spanish, Mandarin, etc.)</strong></td>
+                            <td>Despite AI translation, cultural fluency and real human connection across languages remain irreplaceable in business, diplomacy, and medicine</td>
+                            <td><span class="tag-recommended">Recommended</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="course-category fade-in">
+                <h3>High School: Valuable Differentiators</h3>
+                <p>These courses build creative, hands-on, and entrepreneurial skills that set you apart in a world of AI-assisted knowledge workers.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It Matters in the AI Era</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Art / Design / Digital Media</strong></td>
+                            <td>Creative vision, taste, and aesthetic judgment are distinctly human. AI generates; humans curate, direct, and decide what's meaningful</td>
+                            <td><span class="tag-valuable">Valuable</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Entrepreneurship / Business</strong></td>
+                            <td>AI lowers the barrier to building businesses. Understanding markets, customers, and product thinking lets you create value, not just consume tools</td>
+                            <td><span class="tag-valuable">Valuable</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Robotics / Engineering</strong></td>
+                            <td>Physical-world skills (building, prototyping, hardware) remain hard for AI to replicate. The combination of software and hardware is powerful</td>
+                            <td><span class="tag-valuable">Valuable</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Theater / Performing Arts</strong></td>
+                            <td>Presence, storytelling, improvisation, and reading a room are timeless leadership skills that AI cannot replicate</td>
+                            <td><span class="tag-valuable">Valuable</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="course-category fade-in">
+                <h3>College: Courses Every Student Should Take (Any Major)</h3>
+                <p>Whatever you major in, these courses prepare you for an AI-shaped world.</p>
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Why It's Critical</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Introduction to AI / Machine Learning</strong></td>
+                            <td>Understand the technology shaping every industry. You don't need to build AI, but you must understand what it can and cannot do</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Literacy / Statistics</strong></td>
+                            <td>The ability to interpret data, spot misleading claims, and make evidence-based decisions is critical in every field</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ethics of Technology / AI Ethics</strong></td>
+                            <td>Bias, fairness, surveillance, privacy, disinformation&mdash;every professional will face ethical AI decisions in their career</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Design Thinking / Human-Centered Design</strong></td>
+                            <td>The discipline of designing solutions for real human needs. Keeps you focused on the "why" while AI handles much of the "how"</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Advanced Writing / Communication</strong></td>
+                            <td>Writing well in the AI age means editing, directing, and adding judgment to AI-generated drafts. Clear thinking produces clear writing&mdash;not the other way around</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Systems Thinking / Complex Systems</strong></td>
+                            <td>Understanding how interconnected systems behave. AI excels at narrow tasks; humans are needed to see the big picture</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Psychology of Decision-Making</strong></td>
+                            <td>Cognitive biases, behavioral economics, and how humans actually make choices&mdash;essential for product design, policy, marketing, and leadership</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Entrepreneurship / Innovation</strong></td>
+                            <td>AI dramatically lowers the cost of building products. Understanding how to identify problems, validate ideas, and bring solutions to market is a superpower</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WHAT TO BUILD & DO ==================== -->
+    <section id="build" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>What to Build &amp; Do</h2>
+                <div class="accent-line"></div>
+                <p>In the AI era, what you've built matters more than what you've memorized. Here are the projects, experiences, and activities that demonstrate real capability.</p>
+            </div>
+
+            <div class="mindset-grid">
+                <div class="mindset-card fade-in">
+                    <span class="m-icon">&#128187;</span>
+                    <h3>Build AI-Augmented Projects</h3>
+                    <p>Don't just learn about AI&mdash;use it to build something real. Create a tool that solves an actual problem using AI APIs. Automate something tedious. Build a chatbot for a local business or nonprofit.</p>
+                    <div class="callout"><strong>Key insight:</strong> Showing that you can use AI as a tool to create value is more impressive than any exam score. Document your process on GitHub or a personal blog.</div>
+                </div>
+
+                <div class="mindset-card fade-in">
+                    <span class="m-icon">&#128640;</span>
+                    <h3>Start Something</h3>
+                    <p>Start a small business, a YouTube channel, a newsletter, a community group, or an open-source project. AI makes it cheaper and faster than ever to go from idea to product. The experience of creating something from nothing is irreplaceable.</p>
+                    <div class="callout"><strong>Key insight:</strong> Entrepreneurial experience&mdash;even small-scale&mdash;shows initiative, resilience, and the ability to navigate ambiguity. These traits are deeply valued in every field.</div>
+                </div>
+
+                <div class="mindset-card fade-in">
+                    <span class="m-icon">&#129309;</span>
+                    <h3>Volunteer Where Humans Are Needed Most</h3>
+                    <p>Tutor students, mentor younger kids, volunteer at hospitals, coach sports teams, organize community events, or support elderly neighbors. These experiences build empathy, leadership, and interpersonal skills that AI cannot replicate.</p>
+                    <div class="callout"><strong>Key insight:</strong> Admissions committees and future employers increasingly value demonstrated humanity&mdash;proof that you care about people, not just productivity.</div>
+                </div>
+
+                <div class="mindset-card fade-in">
+                    <span class="m-icon">&#128300;</span>
+                    <h3>Conduct Research (With AI as Your Assistant)</h3>
+                    <p>Use AI tools to accelerate your research projects. Ask better questions, analyze data faster, and explore topics more deeply. Research teaches you to think originally&mdash;AI helps you do it at 10x speed.</p>
+                    <div class="callout"><strong>Key insight:</strong> The ability to formulate a novel research question, design an experiment, and interpret results is a deeply human skill that AI augments but doesn't replace.</div>
+                </div>
+
+                <div class="mindset-card fade-in">
+                    <span class="m-icon">&#127912;</span>
+                    <h3>Create Original Content</h3>
+                    <p>Write essays, make videos, compose music, design art, build games, or write fiction. AI can generate content, but your unique perspective, lived experience, and creative voice are what make content truly resonate.</p>
+                    <div class="callout"><strong>Key insight:</strong> In a world flooded with AI-generated content, authentic human voice and originality become more valuable, not less. Develop and protect your creative identity.</div>
+                </div>
+
+                <div class="mindset-card fade-in">
+                    <span class="m-icon">&#127758;</span>
+                    <h3>Solve Problems in Your Community</h3>
+                    <p>Look at your school, neighborhood, or city. What's broken? What's unfair? What's inefficient? Use AI tools, design thinking, and your own initiative to propose or implement solutions to real local problems.</p>
+                    <div class="callout"><strong>Key insight:</strong> The ability to identify real problems (not just technically interesting ones) and mobilize resources to fix them is the definition of leadership. Start local.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EMERGING CAREERS ==================== -->
+    <section id="careers">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>The Emerging Career Landscape</h2>
+                <div class="accent-line"></div>
+                <p>Many of the best jobs of the next decade don't have established playbooks yet. Here are career directions&mdash;both new and evolved&mdash;that are growing in the AI era.</p>
+            </div>
+
+            <div class="career-grid fade-in">
+                <div class="career-tag">
+                    <span class="ct-icon">&#128272;</span>
+                    <h4>AI Safety Engineer</h4>
+                    <p>Ensuring AI systems are safe, reliable &amp; aligned</p>
+                    <span class="tag-new">New Role</span>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#9878;</span>
+                    <h4>AI Policy &amp; Governance</h4>
+                    <p>Shaping laws &amp; regulations for AI</p>
+                    <span class="tag-new">New Role</span>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#129302;</span>
+                    <h4>AI Product Manager</h4>
+                    <p>Leading teams building AI-powered products</p>
+                    <span class="tag-new">New Role</span>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128171;</span>
+                    <h4>AI-Augmented Doctor</h4>
+                    <p>Medicine enhanced by diagnostic AI &amp; data</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#9997;</span>
+                    <h4>AI-Augmented Lawyer</h4>
+                    <p>Legal practice amplified by AI research tools</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128202;</span>
+                    <h4>Data Storyteller</h4>
+                    <p>Translating complex data into human narratives</p>
+                    <span class="tag-new">New Role</span>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#127912;</span>
+                    <h4>Creative Director (AI)</h4>
+                    <p>Directing AI tools to create art, film &amp; music</p>
+                    <span class="tag-new">Evolving</span>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#129504;</span>
+                    <h4>Computational Scientist</h4>
+                    <p>Using AI to accelerate scientific discovery</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128101;</span>
+                    <h4>Human-AI Interaction Designer</h4>
+                    <p>Designing how humans &amp; AI collaborate</p>
+                    <span class="tag-new">New Role</span>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128640;</span>
+                    <h4>AI Startup Founder</h4>
+                    <p>Building companies on AI-native technology</p>
+                    <span class="tag-new">Booming</span>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#127891;</span>
+                    <h4>AI Educator &amp; Trainer</h4>
+                    <p>Teaching organizations to use AI effectively</p>
+                    <span class="tag-new">New Role</span>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128176;</span>
+                    <h4>AI-Augmented Financial Advisor</h4>
+                    <p>Wealth management with AI-driven insights</p>
+                    <span class="tag-new">Evolving</span>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128736;</span>
+                    <h4>Robotics &amp; Automation Engineer</h4>
+                    <p>Building intelligent physical systems</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#127757;</span>
+                    <h4>Climate Tech Specialist</h4>
+                    <p>Using AI for energy, sustainability &amp; climate</p>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#128274;</span>
+                    <h4>AI Cybersecurity Specialist</h4>
+                    <p>Defending systems against AI-powered threats</p>
+                    <span class="tag-new">Critical</span>
+                </div>
+                <div class="career-tag">
+                    <span class="ct-icon">&#127973;</span>
+                    <h4>Biotech &amp; AI Researcher</h4>
+                    <p>Drug discovery, genomics &amp; personalized medicine</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MINDSETS & SKILLS ==================== -->
+    <section id="mindsets" class="alt-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>The Skills That Will Always Matter</h2>
+                <div class="accent-line"></div>
+                <p>Tools change. Languages change. Frameworks change. But certain foundational skills transcend any specific technology. These are your most durable investments.</p>
+            </div>
+
+            <div class="skills-wrapper fade-in">
+                <div class="skill-box">
+                    <span class="skill-icon">&#129504;</span>
+                    <h3>Critical Thinking</h3>
+                    <p>The ability to evaluate claims, detect flaws in reasoning, and think independently. In a world of AI-generated content, knowing what to trust is a superpower.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128172;</span>
+                    <h3>Communication</h3>
+                    <p>Writing clearly, speaking persuasively, and listening deeply. The ability to move people with words&mdash;in person, in writing, and on camera&mdash;will never be automated.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#127912;</span>
+                    <h3>Creativity &amp; Taste</h3>
+                    <p>Generating truly novel ideas, having strong aesthetic judgment, and knowing what's good. AI can produce; humans decide what's worth producing and what resonates.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#129309;</span>
+                    <h3>Empathy &amp; EQ</h3>
+                    <p>Understanding what other people feel, need, and fear. Leading with emotional intelligence. Building real trust. This is the foundation of every human relationship and team.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128270;</span>
+                    <h3>Problem Framing</h3>
+                    <p>AI is great at solving well-defined problems. Humans are needed to figure out which problems are worth solving, how to define them correctly, and what "success" looks like.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#9201;</span>
+                    <h3>Adaptability</h3>
+                    <p>The willingness to unlearn, relearn, and reinvent yourself. The students who thrive won't be the ones with the most knowledge&mdash;they'll be the fastest learners.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#128101;</span>
+                    <h3>Collaboration</h3>
+                    <p>Working effectively with diverse humans (and AI). Building coalitions. Managing disagreements. Multiplying your impact through others. This is the definition of leadership.</p>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-icon">&#9878;</span>
+                    <h3>Ethical Judgment</h3>
+                    <p>Knowing right from wrong when there's no clear answer. AI systems need humans who can make hard ethical calls about fairness, privacy, safety, and truth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== THE PLAYBOOK ==================== -->
+    <section id="playbook">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Your Playbook: 10 Rules for the AI Era</h2>
+                <div class="accent-line"></div>
+                <p>Concrete, actionable advice for high school students navigating a world that changes faster than any textbook can capture.</p>
+            </div>
+
+            <div class="tips-grid fade-in">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <div class="tip-content">
+                        <h3>Use AI Every Day, Starting Now</h3>
+                        <p>Don't wait for a class to teach you. Use ChatGPT, Claude, Gemini, and other AI tools for your homework (to learn, not to cheat), projects, and creative work. The sooner you develop intuition for what AI does well and where it fails, the further ahead you'll be.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <div class="tip-content">
+                        <h3>Learn to Code&mdash;But Not Just to Code</h3>
+                        <p>Programming teaches structured thinking, problem decomposition, and debugging&mdash;skills that transfer everywhere. Even if AI writes most code in the future, understanding how software works makes you a vastly more effective professional in any field.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <div class="tip-content">
+                        <h3>Become a T-Shaped Person</h3>
+                        <p>Go deep in one area (the vertical bar of the T) and develop broad knowledge across many areas (the horizontal bar). The world rewards people who are world-class at one thing AND can connect it to adjacent fields. Deep + broad = irreplaceable.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div class="tip-content">
+                        <h3>Build a Portfolio, Not Just a Resume</h3>
+                        <p>Create things you can show: projects on GitHub, essays on a blog, designs in a portfolio, videos on YouTube. In the AI era, demonstrating what you can create is more convincing than listing courses you took. Show, don't tell.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">5</div>
+                    <div class="tip-content">
+                        <h3>Master the Art of Asking Great Questions</h3>
+                        <p>In a world where AI can answer almost any question, the ability to ask the right question becomes the most valuable skill. Practice framing problems, challenging assumptions, and digging beneath surface-level answers.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">6</div>
+                    <div class="tip-content">
+                        <h3>Invest Heavily in Writing and Speaking</h3>
+                        <p>AI can generate text, but it can't replace a human who writes with genuine insight, moral authority, and emotional depth. The same goes for speaking. Take every opportunity to write original essays and give talks&mdash;these skills compound.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">7</div>
+                    <div class="tip-content">
+                        <h3>Develop a Strong Ethical Compass</h3>
+                        <p>Study ethics, debate moral dilemmas, and think about the consequences of technology. The people building and deploying AI need strong ethical frameworks. Societies will desperately need leaders who can navigate the gray areas.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">8</div>
+                    <div class="tip-content">
+                        <h3>Cultivate Real-World Relationships</h3>
+                        <p>The ability to build authentic, trusting relationships with other humans is your greatest competitive advantage over AI. Join teams, collaborate on projects, find mentors, and help others. Networks are built on trust, not transactions.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">9</div>
+                    <div class="tip-content">
+                        <h3>Don't Panic&mdash;Embrace the Change</h3>
+                        <p>Every generation has faced technological disruption. The printing press, electricity, the internet&mdash;each created more opportunity than it destroyed. AI is the most powerful tool humans have ever built. Learn to wield it, not fear it.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">10</div>
+                    <div class="tip-content">
+                        <h3>Stay Human</h3>
+                        <p>In the rush to learn AI tools and technical skills, don't forget the things that make you uniquely human: your curiosity, your kindness, your sense of humor, your ability to suffer and grow. The world doesn't need humans who act like machines. It needs humans who are fully, deeply, authentically human.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="footer-content">
+            <h3>The Future Belongs to the Adaptable</h3>
+            <p>You're entering the workforce at the most transformative moment in human history. That's not a threat&mdash;it's an extraordinary opportunity. The students who will thrive aren't the ones who memorize the most or master one tool. They're the ones who think clearly, learn quickly, build boldly, and never stop being curious.</p>
+            <p>The old paths are fading. The new one is yours to create.</p>
+            <div class="disclaimer">
+                This guide reflects the rapidly evolving landscape of AI and education as of early 2026. The field is changing fast&mdash;stay curious, stay informed, and always verify guidance against current developments. Consult with counselors, mentors, and professionals in your areas of interest.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 70;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
