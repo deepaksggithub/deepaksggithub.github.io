@@ -1,0 +1,775 @@
+/* ================================================================
+   RIVEDA LLC — SharePoint Online Styles
+   All styles scoped to .riveda-site to avoid conflicts
+   ================================================================ */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* --- Variables -------------------------------------------------- */
+:root {
+    /* Platform colours */
+    --riveda-sp:   #0078D4;
+    --riveda-pa:   #742774;
+    --riveda-pf:   #0F6CBD;
+
+    /* Brand */
+    --riveda-blue-dark:  #0F3B6E;
+    --riveda-blue:       #0078D4;
+    --riveda-blue-light: #EBF5FF;
+
+    /* Neutral scale */
+    --riveda-gray-900: #111827;
+    --riveda-gray-700: #374151;
+    --riveda-gray-500: #6B7280;
+    --riveda-gray-300: #D1D5DB;
+    --riveda-gray-100: #F3F4F6;
+    --riveda-gray-50:  #F9FAFB;
+    --riveda-white:    #FFFFFF;
+
+    /* Surfaces & depth */
+    --riveda-shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+    --riveda-shadow:    0 4px 16px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --riveda-shadow-lg: 0 20px 48px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.04);
+
+    /* Shape */
+    --riveda-radius:    12px;
+    --riveda-radius-sm: 6px;
+
+    /* Layout */
+    --riveda-container: 1200px;
+    --riveda-section-py: 96px;
+}
+
+/* ================================================================
+   SCOPED CONTAINER
+   ================================================================ */
+.riveda-site {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--riveda-gray-900);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.riveda-site *,
+.riveda-site *::before,
+.riveda-site *::after {
+    box-sizing: border-box;
+}
+
+.riveda-site img  { display: block; max-width: 100%; }
+.riveda-site a    { text-decoration: none; color: inherit; }
+.riveda-site ul   { list-style: none; margin: 0; padding: 0; }
+
+.riveda-site .container {
+    width: min(100%, var(--riveda-container));
+    margin-inline: auto;
+    padding-inline: 24px;
+}
+
+/* ================================================================
+   BUTTONS
+   ================================================================ */
+.riveda-site .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: var(--riveda-radius-sm);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: background 0.2s, border-color 0.2s, color 0.2s,
+                transform 0.2s, box-shadow 0.2s;
+}
+
+.riveda-site .btn--primary {
+    background: var(--riveda-blue);
+    color: var(--riveda-white);
+    border-color: var(--riveda-blue);
+}
+.riveda-site .btn--primary:hover {
+    background: var(--riveda-blue-dark);
+    border-color: var(--riveda-blue-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0,120,212,0.30);
+}
+
+.riveda-site .btn--white {
+    background: var(--riveda-white);
+    color: var(--riveda-blue);
+    border-color: var(--riveda-white);
+    font-weight: 700;
+}
+.riveda-site .btn--white:hover {
+    background: transparent;
+    color: var(--riveda-white);
+    border-color: rgba(255,255,255,0.6);
+}
+
+.riveda-site .btn--ghost {
+    background: transparent;
+    color: rgba(255,255,255,0.88);
+    border-color: rgba(255,255,255,0.35);
+}
+.riveda-site .btn--ghost:hover {
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(255,255,255,0.65);
+    color: var(--riveda-white);
+}
+
+.riveda-site .btn--full { width: 100%; justify-content: center; }
+
+/* ================================================================
+   SECTION HELPERS
+   ================================================================ */
+.riveda-site .section-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 64px;
+}
+.riveda-site .section-header h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--riveda-gray-900);
+    margin: 12px 0 16px;
+}
+.riveda-site .section-header p {
+    font-size: 1.05rem;
+    color: var(--riveda-gray-500);
+    line-height: 1.7;
+}
+
+.riveda-site .section-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 100px;
+    background: var(--riveda-blue-light);
+    color: var(--riveda-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+.riveda-site .section-tag--light {
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.90);
+}
+
+/* ================================================================
+   HERO (adjusted for SharePoint - no nav offset)
+   ================================================================ */
+.riveda-site .hero {
+    background: linear-gradient(140deg, var(--riveda-blue-dark) 0%, #0a5fa8 55%, var(--riveda-blue) 100%);
+    padding: 80px 24px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.riveda-site .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 65% 40%, rgba(255,255,255,0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.riveda-site .hero__inner { position: relative; z-index: 1; }
+
+.riveda-site .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.95);
+    padding: 7px 18px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 28px;
+    border: 1px solid rgba(255,255,255,0.22);
+}
+
+.riveda-site .hero__title {
+    font-size: clamp(2.2rem, 5vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--riveda-white);
+    letter-spacing: -0.025em;
+    max-width: 820px;
+    margin: 0 auto 24px;
+}
+
+.riveda-site .hero__sub {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: rgba(255,255,255,0.82);
+    max-width: 600px;
+    margin: 0 auto 44px;
+    line-height: 1.75;
+}
+
+.riveda-site .hero__actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 52px;
+}
+
+.riveda-site .hero__pills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.riveda-site .hero__pills span {
+    background: rgba(255,255,255,0.10);
+    color: rgba(255,255,255,0.88);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+.riveda-site .hero__pills span i { color: #7ee8a2; font-size: 0.65rem; }
+
+/* ================================================================
+   PLATFORM OVERVIEW
+   ================================================================ */
+.riveda-site .platforms {
+    padding: var(--riveda-section-py) 24px;
+    background: var(--riveda-gray-50);
+}
+
+.riveda-site .platforms__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.riveda-site .platform-card {
+    background: var(--riveda-white);
+    border: 1px solid var(--riveda-gray-100);
+    border-radius: var(--riveda-radius);
+    padding: 40px 32px;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.riveda-site .platform-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--riveda-shadow-lg);
+    border-color: transparent;
+}
+.riveda-site .platform-card--featured {
+    border: 2px solid var(--riveda-blue);
+    box-shadow: var(--riveda-shadow);
+}
+
+.riveda-site .platform-card__icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+    color: var(--riveda-white);
+}
+.riveda-site .platform-card__icon--sp { background: var(--riveda-sp); }
+.riveda-site .platform-card__icon--pa { background: var(--riveda-pa); }
+.riveda-site .platform-card__icon--pf { background: var(--riveda-pf); }
+
+.riveda-site .platform-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--riveda-gray-900);
+}
+.riveda-site .platform-card p {
+    color: var(--riveda-gray-500);
+    line-height: 1.7;
+    margin-bottom: 22px;
+    font-size: 0.95rem;
+}
+
+.riveda-site .platform-card__link {
+    color: var(--riveda-blue);
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+}
+.riveda-site .platform-card__link:hover { gap: 10px; }
+
+/* ================================================================
+   SERVICE SECTIONS
+   ================================================================ */
+.riveda-site .service-section {
+    padding: var(--riveda-section-py) 24px;
+    background: var(--riveda-white);
+}
+.riveda-site .service-section--alt { background: var(--riveda-gray-50); }
+
+.riveda-site .service-section__header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 64px;
+}
+.riveda-site .service-section__header h2 {
+    font-size: clamp(1.75rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--riveda-gray-900);
+    margin: 14px 0 12px;
+}
+.riveda-site .service-section__header p {
+    color: var(--riveda-gray-500);
+    font-size: 1.02rem;
+    line-height: 1.75;
+}
+
+.riveda-site .service-section__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.riveda-site .service-section__badge--sp { background: rgba(0,120,212,0.09); color: var(--riveda-sp); }
+.riveda-site .service-section__badge--pa { background: rgba(116,39,116,0.09); color: var(--riveda-pa); }
+.riveda-site .service-section__badge--pf { background: rgba(15,107,189,0.09); color: var(--riveda-pf); }
+
+.riveda-site .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.riveda-site .service-card {
+    background: var(--riveda-white);
+    border: 1px solid var(--riveda-gray-100);
+    border-radius: var(--riveda-radius);
+    padding: 32px;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.riveda-site .service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--riveda-shadow);
+    border-color: transparent;
+}
+
+.riveda-site .service-card__icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    color: var(--riveda-white);
+}
+.riveda-site .service-card__icon--sp { background: var(--riveda-sp); }
+.riveda-site .service-card__icon--pa { background: var(--riveda-pa); }
+.riveda-site .service-card__icon--pf { background: var(--riveda-pf); }
+
+.riveda-site .service-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--riveda-gray-900);
+}
+.riveda-site .service-card p {
+    color: var(--riveda-gray-500);
+    font-size: 0.9rem;
+    line-height: 1.75;
+}
+
+/* ================================================================
+   ABOUT
+   ================================================================ */
+.riveda-site .about {
+    padding: var(--riveda-section-py) 24px;
+    background: var(--riveda-gray-50);
+}
+
+.riveda-site .about__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.riveda-site .about__content .section-tag { margin-bottom: 16px; }
+.riveda-site .about__content h2 {
+    font-size: clamp(1.75rem, 3vw, 2.3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--riveda-gray-900);
+    margin-bottom: 20px;
+}
+.riveda-site .about__content p {
+    color: var(--riveda-gray-500);
+    line-height: 1.8;
+    margin-bottom: 18px;
+    font-size: 1rem;
+}
+
+.riveda-site .about__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.riveda-site .stat-card {
+    background: var(--riveda-white);
+    border: 1px solid var(--riveda-gray-100);
+    border-radius: var(--riveda-radius);
+    padding: 32px 28px;
+    transition: box-shadow 0.25s;
+}
+.riveda-site .stat-card:hover { box-shadow: var(--riveda-shadow); }
+
+.riveda-site .stat-card__number {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--riveda-blue);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+}
+.riveda-site .stat-card__number span { font-size: 1.75rem; }
+
+.riveda-site .stat-card__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--riveda-gray-500);
+}
+
+/* ================================================================
+   PROCESS
+   ================================================================ */
+.riveda-site .process {
+    padding: var(--riveda-section-py) 24px;
+    background: var(--riveda-white);
+}
+
+.riveda-site .process__steps {
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.riveda-site .process__steps::before {
+    content: '';
+    position: absolute;
+    left: 31px;
+    top: 48px;
+    bottom: 48px;
+    width: 2px;
+    background: var(--riveda-gray-100);
+}
+
+.riveda-site .process-step {
+    display: flex;
+    gap: 28px;
+    padding: 20px 0;
+    align-items: flex-start;
+    position: relative;
+}
+
+.riveda-site .process-step__number {
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+    background: var(--riveda-white);
+    border: 2px solid var(--riveda-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--riveda-blue);
+    z-index: 1;
+}
+
+.riveda-site .process-step__content {
+    padding-top: 14px;
+}
+.riveda-site .process-step__content h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--riveda-gray-900);
+    margin-bottom: 8px;
+}
+.riveda-site .process-step__content p {
+    color: var(--riveda-gray-500);
+    font-size: 0.93rem;
+    line-height: 1.75;
+}
+
+/* ================================================================
+   WHY CHOOSE US
+   ================================================================ */
+.riveda-site .why-us {
+    padding: var(--riveda-section-py) 24px;
+    background: var(--riveda-gray-50);
+}
+
+.riveda-site .why-us__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.riveda-site .why-card {
+    background: var(--riveda-white);
+    border: 1px solid var(--riveda-gray-100);
+    border-radius: var(--riveda-radius);
+    padding: 36px 24px;
+    text-align: center;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+.riveda-site .why-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--riveda-shadow);
+}
+
+.riveda-site .why-card__icon {
+    width: 54px;
+    height: 54px;
+    background: var(--riveda-blue-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--riveda-blue);
+    margin: 0 auto 20px;
+}
+.riveda-site .why-card h3 {
+    font-size: 0.97rem;
+    font-weight: 700;
+    color: var(--riveda-gray-900);
+    margin-bottom: 10px;
+}
+.riveda-site .why-card p {
+    font-size: 0.875rem;
+    color: var(--riveda-gray-500);
+    line-height: 1.75;
+}
+
+/* ================================================================
+   CONTACT
+   ================================================================ */
+.riveda-site .contact {
+    padding: var(--riveda-section-py) 24px;
+    background: linear-gradient(140deg, var(--riveda-blue-dark) 0%, #0a5fa8 60%, var(--riveda-blue) 100%);
+}
+
+.riveda-site .contact__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.riveda-site .contact__text h2 {
+    font-size: clamp(1.75rem, 3vw, 2.3rem);
+    font-weight: 800;
+    color: var(--riveda-white);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 16px 0 20px;
+}
+.riveda-site .contact__text > p {
+    color: rgba(255,255,255,0.78);
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 36px;
+}
+
+.riveda-site .contact__details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.riveda-site .contact__detail {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: rgba(255,255,255,0.88);
+    font-size: 0.95rem;
+}
+.riveda-site .contact__detail-icon {
+    width: 38px;
+    height: 38px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+.riveda-site .contact__detail a {
+    color: rgba(255,255,255,0.88);
+    transition: color 0.2s;
+}
+.riveda-site .contact__detail a:hover { color: var(--riveda-white); }
+
+.riveda-site .contact-form {
+    background: var(--riveda-white);
+    border-radius: var(--riveda-radius);
+    padding: 44px 40px;
+    box-shadow: var(--riveda-shadow-lg);
+}
+
+.riveda-site .form-group { margin-bottom: 20px; }
+.riveda-site .form-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--riveda-gray-700);
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+}
+.riveda-site .form-group input,
+.riveda-site .form-group select,
+.riveda-site .form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--riveda-gray-300);
+    border-radius: var(--riveda-radius-sm);
+    font-family: inherit;
+    font-size: 0.92rem;
+    color: var(--riveda-gray-900);
+    background: var(--riveda-white);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+}
+.riveda-site .form-group input::placeholder,
+.riveda-site .form-group textarea::placeholder { color: var(--riveda-gray-300); }
+.riveda-site .form-group input:focus,
+.riveda-site .form-group select:focus,
+.riveda-site .form-group textarea:focus {
+    border-color: var(--riveda-blue);
+    box-shadow: 0 0 0 3px rgba(0,120,212,0.12);
+}
+.riveda-site .form-group textarea {
+    resize: vertical;
+    min-height: 108px;
+}
+.riveda-site .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.riveda-site .form-submit--success { background: #059669 !important; border-color: #059669 !important; }
+.riveda-site .form-submit--error   { background: #DC2626 !important; border-color: #DC2626 !important; }
+
+/* ================================================================
+   SCROLL REVEAL
+   ================================================================ */
+.riveda-site .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.riveda-site .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.riveda-site .services-grid .reveal:nth-child(2) { transition-delay: 0.06s; }
+.riveda-site .services-grid .reveal:nth-child(3) { transition-delay: 0.12s; }
+.riveda-site .services-grid .reveal:nth-child(4) { transition-delay: 0.18s; }
+.riveda-site .services-grid .reveal:nth-child(5) { transition-delay: 0.24s; }
+.riveda-site .services-grid .reveal:nth-child(6) { transition-delay: 0.30s; }
+
+.riveda-site .platforms__grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+.riveda-site .platforms__grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+
+.riveda-site .why-us__grid .reveal:nth-child(2) { transition-delay: 0.07s; }
+.riveda-site .why-us__grid .reveal:nth-child(3) { transition-delay: 0.14s; }
+.riveda-site .why-us__grid .reveal:nth-child(4) { transition-delay: 0.21s; }
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 1024px) {
+    :root { --riveda-section-py: 80px; }
+
+    .riveda-site .platforms__grid,
+    .riveda-site .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .riveda-site .why-us__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .riveda-site .about__inner,
+    .riveda-site .contact__inner {
+        grid-template-columns: 1fr;
+        gap: 52px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root { --riveda-section-py: 64px; }
+
+    .riveda-site .platforms__grid,
+    .riveda-site .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .riveda-site .about__stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .riveda-site .why-us__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .riveda-site .contact-form {
+        padding: 28px 24px;
+    }
+
+    .riveda-site .process__steps::before { display: none; }
+}
+
+@media (max-width: 480px) {
+    .riveda-site .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .riveda-site .hero__actions .btn { justify-content: center; }
+
+    .riveda-site .about__stats,
+    .riveda-site .why-us__grid {
+        grid-template-columns: 1fr;
+    }
+}
